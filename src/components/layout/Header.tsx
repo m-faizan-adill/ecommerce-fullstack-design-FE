@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search, ShoppingCart, User, MessageSquare, Heart, Menu, ChevronDown } from "lucide-react";
+import { Search, ShoppingCart, User, MessageSquare, Heart, Menu, ChevronDown, ShoppingBag } from "lucide-react";
 import MobileSidebar from "./MobileSidebar";
 import { navLinks } from "@/lib/data";
 
@@ -15,21 +15,23 @@ export default function Header() {
       {/* Top bar - desktop only */}
       <div className="hidden lg:flex items-center justify-between px-6 py-2 bg-white border-b border-gray-200">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 font-semibold text-gray-800 text-lg">
-          <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
-            <ShoppingCart size={16} className="text-white" />
+        <a href="#" className="flex items-center gap-2">
+          <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center shadow-sm">
+            <ShoppingBag size={18} className="text-white" />
           </div>
-          Brand
-        </a>
 
+          <span className="text-2xl font-semibold text-blue-400">
+            Brand
+          </span>
+        </a>
         {/* Search */}
         <div className="flex flex-1 max-w-xl mx-8">
           <input
             type="text"
             placeholder="Search"
-            className="flex-1 border border-gray-300 rounded-l px-3 py-1.5 text-sm outline-none"
+            className="flex-1 border border-blue-600 rounded-l px-3 py-1.5 text-sm outline-none"
           />
-          <select className="border border-l-0 border-gray-300 px-2 py-1.5 text-sm outline-none bg-gray-50">
+          <select className="border border-l-0 border-blue-600 px-2 py-1.5 text-sm outline-none bg-gray-50">
             <option>All category</option>
             <option>Cameras</option>
             <option>Laptops</option>
@@ -63,15 +65,20 @@ export default function Header() {
 
       {/* Mobile top bar */}
       <div className="flex lg:hidden items-center justify-between px-4 py-3 bg-white border-b border-gray-200">
-        <button onClick={() => setSidebarOpen(true)}>
-          <Menu size={22} className="text-gray-700" />
-        </button>
-        <a href="#" className="flex items-center gap-2 font-semibold text-gray-800">
-          <div className="w-7 h-7 bg-blue-600 rounded flex items-center justify-center">
-            <ShoppingCart size={14} className="text-white" />
-          </div>
-          Brand
-        </a>
+        <div className="flex gap-4">
+          <button onClick={() => setSidebarOpen(true)}>
+            <Menu size={22} className="text-gray-700" />
+          </button>
+          <a href="#" className="flex items-center gap-2">
+            <div className="w-7 h-7 bg-blue-500 rounded-lg flex items-center justify-center shadow-sm">
+              <ShoppingBag size={14} className="text-white" />
+            </div>
+
+            <span className="text- font-semibold text-blue-400">
+              Brand
+            </span>
+          </a>
+        </div>
         <div className="flex items-center gap-3">
           <ShoppingCart size={22} className="text-gray-700" />
           <User size={22} className="text-gray-700" />
@@ -80,7 +87,7 @@ export default function Header() {
 
       {/* Mobile search */}
       <div className="flex lg:hidden px-4 py-2 bg-white border-b border-gray-100">
-        <div className="flex w-full border border-gray-300 rounded overflow-hidden">
+        <div className="flex w-full border border-blue-600 rounded overflow-hidden">
           <Search size={16} className="text-gray-400 m-auto ml-3" />
           <input
             type="text"
