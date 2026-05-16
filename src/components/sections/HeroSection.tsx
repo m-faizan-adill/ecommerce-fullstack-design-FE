@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <div className="px-4 lg:px-6">
+    <div className="lg:px-6 lg:pt-6">
       <div className="flex items-stretch gap-3 bg-white lg:border lg:border-gray-200 lg:rounded lg:p-4">
 
         {/* Category sidebar - desktop only */}
@@ -28,12 +28,12 @@ export default function HeroSection() {
           <div className="absolute inset-0 flex items-center">
             <div className="px-6 lg:px-10 z-10">
               <p className="text-gray-600 text-sm">Latest trending</p>
-              <h1 className="text-2xl lg:text-3xl font-bold text-gray-800 mt-1 mb-4">
+              <h1 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">
                 Electronic items
               </h1>
               <a
                 href="#"
-                className="inline-block border border-gray-400 text-gray-700 text-sm px-4 py-1.5 rounded hover:bg-white"
+                className="inline-block bg-white text-gray-700 text-sm px-4 py-1.5 rounded"
               >
                 Learn more
               </a>
