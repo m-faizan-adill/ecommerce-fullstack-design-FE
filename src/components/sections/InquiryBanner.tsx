@@ -2,8 +2,7 @@ export default function InquiryBanner() {
   return (
     <section className="px-4 lg:px-6 py-4">
       <div
-        className="relative rounded overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #1a6fc4 0%, #3a9ad9 100%)" }}
+        className="relative rounded overflow-hidden bg-[url('/assets/Image/backgrounds/Group_982.png')] bg-cover bg-center bg-no-repeat"
       >
         <div className="flex flex-col lg:flex-row">
           {/* Left text */}
