@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ecommerce Fullstack Design - Frontend
+
+A responsive ecommerce web application built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4.
+
+## Tech Stack
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- clsx & tailwind-merge
+- Lucide React (icons)
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   └── MobileSidebar.tsx
+│   └── sections/
+│       ├── HeroSection.tsx
+│       ├── DealsSection.tsx
+│       ├── CategorySection.tsx
+│       ├── MobileCategorySection.tsx
+│       ├── InquiryBanner.tsx
+│       ├── RecommendedSection.tsx
+│       ├── ServicesSection.tsx
+│       └── SuppliersSection.tsx
+├── hooks/
+│   └── use-mobile.ts
+├── lib/
+│   ├── data.ts
+│   └── utils.ts
+└── types/
+    └── index.ts
+```
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/m-faizan-adill/ecommerce-fullstack-design-FE.git
+cd ecommerce-fullstack-design-FE
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Add assets
+
+Place the `assets` folder inside the `public` directory:
+
+```
+public/
+└── assets/
+    ├── Image/
+    ├── Layout/
+    └── Layout1/
+```
+
+### 4. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage with all sections |
 
-## Learn More
+## Components
 
-To learn more about Next.js, take a look at the following resources:
+### Layout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Component | Description |
+|-----------|-------------|
+| `Header` | Desktop and mobile top navigation with search |
+| `Footer` | Links, newsletter subscription, and social icons |
+| `MobileSidebar` | Slide-in sidebar for mobile with nav links |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Sections
 
-## Deploy on Vercel
+| Component | Description |
+|-----------|-------------|
+| `HeroSection` | Category sidebar, banner image, and user action cards |
+| `DealsSection` | Product deals with live countdown timer |
+| `CategorySection` | Desktop grid layout for product categories |
+| `MobileCategorySection` | Horizontal scroll category list for mobile |
+| `InquiryBanner` | Send quote to suppliers banner with form |
+| `RecommendedSection` | Recommended product grid |
+| `ServicesSection` | Extra services with image overlays |
+| `SuppliersSection` | Suppliers listed by region with flags |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Product Schema
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Field | Type | Required |
+|-------|------|----------|
+| id | string | Yes |
+| name | string | Yes |
+| price | number | Yes |
+| image | string | Yes |
+| description | string | Yes |
+| category | string | Yes |
+| stock | number | Yes |
+
+## Responsive Design
+
+| Breakpoint | Layout |
+|------------|--------|
+| Mobile | Single column, horizontal scroll sections, hamburger menu |
+| Desktop (lg+) | Multi-column grid, full sidebar, expanded header |
