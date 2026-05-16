@@ -38,12 +38,12 @@ export default function DealsSection() {
   ];
 
   return (
-    <section className="px-4 lg:px-6 py-6">
-      <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+    <section className="lg:px-6 py-6">
+      <div className="bg-white md:border border-gray-200 rounded-lg overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr]">
 
           {/* Left Side */}
-          <div className="p-5 flex md:flex-col md:items-start md:justify-start md:gap-0 items-center justify-between gap-3 border-b lg:border-b-0 lg:border-r border-gray-200">
+          <div className="p-5 flex flex-row md:flex-col md:items-start md:justify-start md:gap-0 items-center justify-between gap-3 border-b lg:border-b-0 lg:border-r border-gray-200">
             <div className="">
               <h2 className="font-semibold text-gray-800 text-sm">
                 Deals and offers
@@ -54,7 +54,7 @@ export default function DealsSection() {
             </div>
 
             {/* Timer */}
-            <div className="flex gap-2 lg:mt-4">
+            <div className="flex gap-2 md:mt-4">
               {timeBlocks.map((block) => (
                 <div key={block.label} className="text-center">
                   <div className="bg-gray-700 text-white text-xs font-semibold w-10 h-10 flex flex-col items-center justify-center rounded">
@@ -71,11 +71,11 @@ export default function DealsSection() {
           </div>
 
           {/* Right Side Products */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
+          <div className="flex overflow-x-auto scrollbar-hide">
             {dealProducts.slice(0, 5).map((product, i) => (
               <div
                 key={product.id}
-                className="flex flex-col items-center justify-center py-5 px-3 border-r border-gray-200 last:border-r-0"
+                className="min-w-40 flex flex-col items-center justify-center py-5 px-3 border-r border-b border-gray-200 last:border-r-0"
               >
                 {/* Product Image */}
                 <div className="relative w-20 h-20 mb-3">
