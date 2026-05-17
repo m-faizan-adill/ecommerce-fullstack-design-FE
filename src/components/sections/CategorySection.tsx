@@ -48,24 +48,22 @@ export default function CategorySection({
 
           {/* Row 1 items */}
           {row1.map((item, i) => (
-            <div className="border border-gray-200">
-              <a
-                key={`r1-${i}`}
-                href="#"
-                className="flex flex-col justify-between p-3 hover:bg-gray-50 transition-colors"
-              >
-                <div>
-                  <p className="text-xs font-medium text-gray-800 line-clamp-2 leading-tight">
-                    {item.name}
-                  </p>
-                  <p className="text-xs text-gray-400 mt-0.5">From</p>
-                  <p className="text-xs text-gray-500">USD {item.price}</p>
-                </div>
-                <div className="relative w-full h-16 mt-2">
-                  <Image src={item.image} alt={item.name} fill className="object-contain" />
-                </div>
-              </a>
-            </div>
+            <a
+              key={`r1-${i}`}
+              href="#"
+              className="flex flex-col justify-between border border-gray-200 p-3 hover:bg-gray-50 transition-colors"
+            >
+              <div>
+                <p className="text-xs font-medium text-gray-800 line-clamp-2 leading-tight">
+                  {item.name}
+                </p>
+                <p className="text-xs text-gray-400 mt-0.5">From</p>
+                <p className="text-xs text-gray-500">USD {item.price}</p>
+              </div>
+              <div className="relative w-full h-16 mt-2">
+                <Image src={item.image} alt={item.name} fill className="object-contain" />
+              </div>
+            </a>
           ))}
 
           {/* Row 2 items */}
