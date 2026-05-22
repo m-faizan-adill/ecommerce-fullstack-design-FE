@@ -6,6 +6,9 @@ export interface Product {
   description: string;
   category: string;
   stock: number;
+  oldPrice?: number;
+  freeShip?: boolean;
+  rating: number; // 0 to 5
 }
 
 export interface Category {
