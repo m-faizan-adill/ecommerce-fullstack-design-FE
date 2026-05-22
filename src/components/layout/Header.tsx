@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Search, ShoppingCart, User, MessageSquare, Heart, Menu, ChevronDown, ShoppingBag } from "lucide-react";
 import MobileSidebar from "./MobileSidebar";
-import { navLinks } from "@/lib/data";
+import { SecondaryHeader } from "./SecondaryHeader";
 
 export default function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -111,23 +111,7 @@ export default function Header() {
 
       {/* Desktop nav bar */}
       <div className="hidden lg:flex items-center justify-between px-6 py-2 bg-white border-b border-gray-100 text-sm">
-        <div className="flex items-center gap-6">
-          <button className="flex items-center gap-1 font-medium text-gray-700">
-            <Menu size={16} />
-            All category
-          </button>
-          {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className="flex items-center gap-1 text-gray-600 hover:text-blue-600">
-              {link.label}
-              {link.label === "Help" && <ChevronDown size={14} />}
-              {link.label === "Menu item" && <ChevronDown size={14} />}
-            </a>
-          ))}
-        </div>
-        <div className="flex items-center gap-4 text-gray-500 text-xs">
-          <span>English, USD</span>
-          <span>Ship to 🇩🇪</span>
-        </div>
+        <SecondaryHeader />
       </div>
     </>
   );
