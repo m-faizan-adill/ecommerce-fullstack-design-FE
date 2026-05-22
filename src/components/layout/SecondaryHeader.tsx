@@ -7,11 +7,11 @@ import { ShipToSelector } from "./ShipToSelector";
 export function SecondaryHeader() {
   return (
     <div className="w-full border-b border-gray-200 bg-white">
-      <div className="mx-auto flex h-11 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto flex h-11 items-center justify-between px-4 sm:px-6 lg:px-8">
 
         {/* ── Left: All-category trigger + nav links ── */}
         <div className="flex items-center gap-1">
-          <AllCategoryButton />
+          <AllCategoryButton /> v
 
           {/* Vertical divider */}
           <span className="mx-3 h-4 w-px bg-gray-200" aria-hidden="true" />

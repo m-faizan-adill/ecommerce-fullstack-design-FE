@@ -13,8 +13,8 @@ import { homeOutdoorProducts, electronicsProducts } from "@/lib/data";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100">
-      <Header />
 
+      <Header />
       <main className="max-w-7xl mx-auto">
         <HeroSection />
         <DealsSection />
