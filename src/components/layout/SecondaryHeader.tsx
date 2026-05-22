@@ -11,7 +11,7 @@ export function SecondaryHeader() {
 
         {/* ── Left: All-category trigger + nav links ── */}
         <div className="flex items-center gap-1">
-          <AllCategoryButton /> v
+          <AllCategoryButton />
 
           {/* Vertical divider */}
           <span className="mx-3 h-4 w-px bg-gray-200" aria-hidden="true" />
