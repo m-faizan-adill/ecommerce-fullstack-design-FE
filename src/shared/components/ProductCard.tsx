@@ -1,17 +1,15 @@
 import Image from "next/image";
-import { Heart } from "lucide-react";
 
 import { Product } from '@/types/index'
-import { cn } from "@/lib/utils";
+import { FavoriteButton } from "@/features/products/components/FavoriteButton";
 
 interface ProductCardProps {
   product: Product;
-  onWishlist?: () => void;
   isFavorite?: boolean;
 }
 
 export default function ProductCard(props: ProductCardProps) {
-  const { product, onWishlist, isFavorite } = props;
+  const { product, isFavorite } = props;
   const rating = product.rating;
 
   const fullStars = Math.floor(rating);
@@ -48,12 +46,30 @@ export default function ProductCard(props: ProductCardProps) {
           )}
         </div>
 
-        <button onClick={onWishlist} className="border border-[#DEE2E7] shadow-sm rounded-md p-2 hover:bg-gray-100">
+        {/* <button onClick={onWishlist} className="border border-[#DEE2E7] shadow-sm rounded-md p-2 hover:bg-gray-100">
           <Heart size={16} className={cn(
             "w-5 h-5",
             isFavorite ? "fill-blue-500 text-blue-500" : "text-[#0D6EFD]"
           )} />
-        </button>
+        </button> */}
+        <FavoriteButton productId={product.id}  initialFavorited={isFavorite} />
+        {/* <Button
+          variant="ghost"
+          shape="icon"
+          size="md"
+          onClick={onWishlist}
+          className="border border-[#DEE2E7] shadow-sm hover:bg-gray-100"
+        >
+          <Heart
+            size={16}
+            className={cn(
+              "w-5 h-5",
+              isFavorite
+                ? "fill-blue-500 text-blue-500"
+                : "text-[#0D6EFD]"
+            )}
+          />
+        </Button> */}
       </div>
 
       {/* Rating */}
