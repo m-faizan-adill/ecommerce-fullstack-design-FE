@@ -11,15 +11,15 @@ const variants: Record<Variant, string> = {
   outline: "border border-border text-foreground",
 };
 
-export function Badge({
-  variant = "default",
-  children,
-  className,
-}: {
+interface BadgeProps {
   variant?: Variant;
   children: ReactNode;
   className?: string;
-}) {
+}
+
+export function Badge(props: BadgeProps) {
+  const { variant = "default", children, className } = props;
+  
   return (
     <span
       className={cn(
