@@ -33,24 +33,16 @@ export function FavoriteButton(props: FavoriteButtonProps) {
     };
 
     return (
-        <Button
-            variant="ghost"
-            shape="icon"
-            size="md"
-            onClick={toggle}
-            aria-label={favorited ? "Remove from favorites" : "Add to favorites"}
+        <button
             disabled={isPending}
-            className={cn("border border-[#DEE2E7] shadow-sm hover:bg-gray-100", isPending ? "opacity-60 cursor-not-allowed" : "cursor-pointer")}
+            onClick={toggle}
+            className="border border-[#DEE2E7] shadow-sm rounded-md p-2 hover:bg-gray-100"
+            aria-label={favorited ? "Remove from favorites" : "Add to favorites"}
         >
-            <Heart
-                size={16}
-                className={cn(
-                    "w-5 h-5",
-                    favorited
-                        ? "fill-blue-500 text-blue-500"
-                        : "text-[#0D6EFD]"
-                )}
-            />
-        </Button>
+            <Heart size={16} className={cn(
+                "w-5 h-5",
+                favorited ? "fill-blue-500 text-blue-500" : "text-[#0D6EFD]"
+            )} />
+        </button>
     );
 }
