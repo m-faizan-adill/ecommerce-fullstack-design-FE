@@ -7,6 +7,7 @@ import {
   type KeyboardEvent,
 } from "react";
 import { cn } from "@/lib/utils";
+import Button from "./Button";
 
 // ─── Shared chevron ───────────────────────────────────────────────────────────
 function ChevronDown({ className }: { className?: string }) {
@@ -112,7 +113,7 @@ export function MultiSelect({
 
   return (
     <div ref={ref} className={cn("relative w-full", className)}>
-      <button
+      {/* <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         className={cn(
@@ -123,8 +124,18 @@ export function MultiSelect({
       >
         <span className="truncate">{displayLabel}</span>
         <ChevronDown />
-      </button>
-
+      </button> */}
+      <Button
+        type="button"
+        variant="outline"
+        size="md"
+        block
+        onClick={() => setOpen((o) => !o)}
+        trailingIcon={<ChevronDown className="h-4 w-4 text-[#0067FF]" />}
+        className={!selected.length ? "text-gray-400" : ""}
+      >
+        <span className="truncate">{displayLabel}</span>
+      </Button>
       {open && (
         <ul className="absolute z-20 mt-1 w-full rounded-lg border border-gray-200 bg-white shadow-lg py-1 max-h-48 overflow-auto">
           {options.map((opt) => (
@@ -247,8 +258,8 @@ export function TagSelect({
 // ─── Datepicker ───────────────────────────────────────────────────────────────
 const DAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 const MONTHS = [
-  "January","February","March","April","May","June",
-  "July","August","September","October","November","December",
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
 ];
 
 function getDaysInMonth(year: number, month: number) {
