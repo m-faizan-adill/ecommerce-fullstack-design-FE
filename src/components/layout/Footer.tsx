@@ -1,4 +1,5 @@
 import { ShoppingCart } from "lucide-react";
+import Button from "../ui/Button";
 
 export default function Footer() {
   return (
@@ -12,9 +13,11 @@ export default function Footer() {
             <span className="px-3 text-gray-400 flex items-center text-sm">✉</span>
             <input type="email" placeholder="Email" className="flex-1 py-2 text-sm outline-none" />
           </div>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700">
+          {/* <button className="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700">
             Subscribe
-          </button>
+          </button> */}
+          <Button variant="filled" size="md">Subscribe</Button>
+
         </div>
       </div>
 
