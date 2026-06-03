@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { Product } from '@/types/index'
 import { FavoriteButton } from "@/features/products/components/FavoriteButton";
+import Rating from "@/components/ui/Rating";
 
 interface ProductCardProps {
   product: Product;
@@ -10,11 +11,6 @@ interface ProductCardProps {
 
 export default function ProductCard(props: ProductCardProps) {
   const { product, isFavorite } = props;
-  const rating = product.rating;
-
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 >= 0.5;
-  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-4 w-full max-w-sm">
@@ -46,54 +42,12 @@ export default function ProductCard(props: ProductCardProps) {
           )}
         </div>
 
-        {/* <button onClick={onWishlist} className="border border-[#DEE2E7] shadow-sm rounded-md p-2 hover:bg-gray-100">
-          <Heart size={16} className={cn(
-            "w-5 h-5",
-            isFavorite ? "fill-blue-500 text-blue-500" : "text-[#0D6EFD]"
-          )} />
-        </button> */}
-        <FavoriteButton productId={product.id}  initialFavorited={isFavorite} />
-        {/* <Button
-          variant="ghost"
-          shape="icon"
-          size="md"
-          onClick={onWishlist}
-          className="border border-[#DEE2E7] shadow-sm hover:bg-gray-100"
-        >
-          <Heart
-            size={16}
-            className={cn(
-              "w-5 h-5",
-              isFavorite
-                ? "fill-blue-500 text-blue-500"
-                : "text-[#0D6EFD]"
-            )}
-          />
-        </Button> */}
+        <FavoriteButton productId={product.id} initialFavorited={isFavorite} />
       </div>
 
       {/* Rating */}
       <div className="flex items-center gap-1 text-sm mb-2">
-        {/* Full Stars */}
-        {[...Array(fullStars)].map((_, i) => (
-          <span key={`full-${i}`} className="text-yellow-500">★</span>
-        ))}
-
-        {/* Half Star */}
-        {hasHalfStar && (
-          <span className="relative inline-block">
-            <span className="text-gray-300">★</span>
-            <span className="absolute left-0 top-0 w-1/2 overflow-hidden text-yellow-500">
-              ★
-            </span>
-          </span>
-        )}
-        {/* Empty Stars */}
-        {[...Array(emptyStars)].map((_, i) => (
-          <span key={`empty-${i}`} className="text-gray-300">★</span>
-        ))}
-
-        <span className="text-gray-500 ml-1">{rating}</span>
+        <Rating rating={product.rating} />
       </div>
       {/* Title */}
       <p className="font-sans font-normal text-base leading-6 tracking-[-0.2px] text-[#606060]">
