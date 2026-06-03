@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Search, ShoppingCart, User, MessageSquare, Heart, Menu, ChevronDown, ShoppingBag } from "lucide-react";
 import MobileSidebar from "./MobileSidebar";
 import { SecondaryHeader } from "./SecondaryHeader";
+import Link from "next/link";
 
 export default function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -16,7 +17,7 @@ export default function Header() {
       <div className="w-full border-b border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto hidden lg:flex items-center justify-between py-2 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
+          <Link href="#" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center shadow-sm">
               <ShoppingBag size={18} className="text-white" />
             </div>
@@ -24,7 +25,7 @@ export default function Header() {
             <span className="text-2xl font-semibold text-blue-400">
               Brand
             </span>
-          </a>
+          </Link>
           {/* Search */}
           <div className="flex flex-1 max-w-xl mx-8">
             <input

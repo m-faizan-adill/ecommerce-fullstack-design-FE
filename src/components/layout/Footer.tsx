@@ -1,5 +1,6 @@
-import { ShoppingCart } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import Button from "../ui/Button";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -24,18 +25,23 @@ export default function Footer() {
       {/* Links */}
       <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-5 gap-6">
         <div className="col-span-2 md:col-span-1">
-          <div className="flex items-center gap-2 font-semibold text-gray-800 mb-3">
-            <div className="w-7 h-7 bg-blue-600 rounded flex items-center justify-center">
-              <ShoppingCart size={14} className="text-white" />
-            </div>
-            Brand
+          <div className="flex items-center mb-3">
+            <Link href="#" className="flex items-center gap-2">
+              <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center shadow-sm">
+                <ShoppingBag size={18} className="text-white" />
+              </div>
+
+              <span className="text-2xl font-semibold text-blue-400">
+                Brand
+              </span>
+            </Link>
           </div>
           <p className="text-xs text-gray-500 mb-3">Best information about the company goes here but now lorem ipsum is</p>
           <div className="flex gap-2">
             {["f", "t", "in", "be", "@"].map((s) => (
-              <a key={s} href="#" className="w-7 h-7 rounded-full border border-gray-300 flex items-center justify-center text-xs text-gray-500 hover:border-blue-600 hover:text-blue-600">
+              <Link key={s} href="#" className="w-7 h-7 rounded-full border border-gray-300 flex items-center justify-center text-xs text-gray-500 hover:border-blue-600 hover:text-blue-600">
                 {s}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -64,7 +70,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-gray-100 px-6 py-4 flex items-center justify-between text-xs text-gray-400">
-        <span>© 2023 Ecommerce.</span>
+        <span>© 2026 Ecommerce.</span>
         <span>English</span>
       </div>
     </footer>
