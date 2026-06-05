@@ -1,20 +1,25 @@
+'use client';
 import { Skeleton } from "@/components/ui/skeleton";
 import ProductCard from "./ProductCard";
 
 import { Product } from '@/types/index'
+import { cn } from "@/lib/utils";
 
 interface ProductGridProps {
-    products: Product[];
+  products: Product[];
+  viewMode?: 'grid' | 'list';
 }
 
-export default function ProductGrid({ products }: ProductGridProps) {
-    return (
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
-            {products.map((product) => (
-                <ProductCard key={product.id} product={product} />
-            ))}
-        </div>
-    );
+export default function ProductGrid({ products, viewMode }: ProductGridProps) {
+  return (
+    <div className={cn(
+      viewMode === 'list' ? 'flex flex-col gap-4' : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'
+    )}>
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} viewMode={viewMode} />
+      ))}
+    </div>
+  );
 }
 
 

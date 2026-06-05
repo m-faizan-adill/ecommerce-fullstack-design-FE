@@ -6,10 +6,12 @@ import { useState } from "react";
 
 interface ProductToolbarProps {
     total: number;
+    viewMode: 'grid' | 'list';
+    onViewChange: (mode: 'grid' | 'list') => void;
 }
 
-export default function ProductToolbar({ total }: ProductToolbarProps) {
-    const [view, setView] = useState<"grid" | "list">("grid");
+export default function ProductToolbar(props: ProductToolbarProps) {
+    const { total, viewMode, onViewChange } = props;
     const [sort, setSort] = useState("featured");
 
     return (
@@ -40,17 +42,17 @@ export default function ProductToolbar({ total }: ProductToolbarProps) {
                 {/* View Toggle */}
                 <ButtonGroup>
                     <Button
-                        variant={view === "grid" ? "filled" : "outline"}
+                        variant={viewMode === "grid" ? "filled" : "outline"}
                         size="sm"
-                        onClick={() => setView("grid")}
+                        onClick={() => onViewChange("grid")}
                         aria-label="Grid view"
                     >
                         ☷
                     </Button>
                     <Button
-                        variant={view === "list" ? "filled" : "outline"}
+                        variant={viewMode === "list" ? "filled" : "outline"}
                         size="sm"
-                        onClick={() => setView("list")}
+                        onClick={() => onViewChange("list")}
                         aria-label="List view"
                     >
                         ☰
