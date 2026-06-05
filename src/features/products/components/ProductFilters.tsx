@@ -146,14 +146,14 @@ export default function ProductFilters() {
                     <span className="text-gray-400 text-xs">▲</span>
                 </div>
                 <div className="flex flex-col gap-2">
-                    {[5, 4, 3, 2].map((rating) => (
-                        <div key={rating} className="flex items-center gap-1">
+                    {[5, 4, 3, 2, 1].map((stars) => (
+                        <div key={stars} className="flex items-center gap-1">
                             <Checkbox />
-                            <div className="flex text-[#FF9017] text-lg leading-none ml-1">
-                                {[...Array(5)].map((_, i) => (
-                                    <span key={i}>{i < rating ? '★' : '☆'}</span>
-                                ))}
-                            </div>
+                            <Rating
+                                rating={stars}
+                                showValue={false}
+                                className="ml-1"
+                            />
                         </div>
                     ))}
                 </div>
