@@ -1,10 +1,8 @@
-import ProductGrid from "@/shared/components/ProductGrid";
-
 import ProductFilters from "@/features/products/components/ProductFilters";
-import { getProducts } from "@/features/products/services/product.service";
 import Header from "@/components/layout/Header";
+import { getProducts } from "@/features/products/services/product.service";
 import { Breadcrumbs } from "@/components/ui";
-import ProductToolbar from "@/features/products/components/ProductToolbar";
+import ProductListContainer from "@/features/products/components/ProductListContainer";
 
 export default async function ProductsPage() {
     const products = await getProducts();
@@ -24,18 +22,9 @@ export default async function ProductsPage() {
                     </div>
 
                     {/* Right Content */}
-                    <div className="lg:col-span-3 flex flex-col gap-4">
-
-                        {/* Toolbar */}
-                        <ProductToolbar total={12911} />
-
-                        {/* Products */}
-                        <ProductGrid products={products} />
-
-                    </div>
-
+                    <ProductListContainer products={products} />
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
