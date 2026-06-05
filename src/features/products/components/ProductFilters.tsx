@@ -1,10 +1,13 @@
 'use client';
 
-import { useState } from 'react';
-import { Checkbox, Radio } from '@/components/ui/FormChecks';
-import { Button } from '@/components/ui/Button'; 
+import { ReactNode, useState } from 'react';
+
 import Rating from '@/components/ui/Rating';
+import { Checkbox, Radio } from '@/components/ui/FormChecks';
+import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/FormFields.tsx';
+import { ChevronIcon } from '@/components/ui';
+import { cn } from '@/lib/utils';
 
 export default function ProductFilters() {
     const [priceMin, setPriceMin] = useState<string>('0');
@@ -15,29 +18,20 @@ export default function ProductFilters() {
         <div className="w-60 bg-white border border-[#DEE2E7] rounded-md divide-y divide-[#DEE2E7] text-[#1C1C1C]">
 
             {/* --- Category Section --- */}
-            <div className="p-4">
-                <div className="flex justify-between items-center mb-3 cursor-pointer">
-                    <h3 className="font-semibold text-base text-[#1C1C1C]">Category</h3>
-                    <span className="text-gray-400 text-xs">▲</span>
-                </div>
+            <FilterSection title='Category'>
                 <ul className="space-y-2 text-[#505050] text-sm">
                     <li className="hover:text-[#0D6EFD] cursor-pointer">Mobile accessory</li>
                     <li className="hover:text-[#0D6EFD] cursor-pointer">Electronics</li>
                     <li className="hover:text-[#0D6EFD] cursor-pointer">Smartphones</li>
                     <li className="hover:text-[#0D6EFD] cursor-pointer">Modern tech</li>
                 </ul>
-                {/* Custom Ghost Button used here */}
                 <Button variant="ghost" size="sm" className="mt-2 -ml-3 text-xs font-medium">
                     See all
                 </Button>
-            </div>
+            </FilterSection>
 
             {/* --- Brands Section --- */}
-            <div className="p-4">
-                <div className="flex justify-between items-center mb-3 cursor-pointer">
-                    <h3 className="font-semibold text-base text-[#1C1C1C]">Brands</h3>
-                    <span className="text-gray-400 text-xs">▲</span>
-                </div>
+            <FilterSection title='Brands'>
                 <div className="flex flex-col gap-2">
                     {['Samsung', 'Apple', 'Huawei', 'Pocco', 'Lenovo'].map((brand) => (
                         <Checkbox
@@ -46,18 +40,13 @@ export default function ProductFilters() {
                         />
                     ))}
                 </div>
-                {/* Custom Ghost Button used here */}
                 <Button variant="ghost" size="sm" className="mt-2 -ml-3 text-xs font-medium">
                     See all
                 </Button>
-            </div>
+            </FilterSection>
 
             {/* --- Features Section --- */}
-            <div className="p-4">
-                <div className="flex justify-between items-center mb-3 cursor-pointer">
-                    <h3 className="font-semibold text-base">Features</h3>
-                    <span className="text-gray-400 text-xs">▲</span>
-                </div>
+            <FilterSection title='Features'>
                 <div className="flex flex-col gap-2">
                     {['Metallic', 'Plastic cover', '8GB Ram', 'Super power', 'Large Memory'].map((feature) => (
                         <Checkbox
@@ -66,19 +55,13 @@ export default function ProductFilters() {
                         />
                     ))}
                 </div>
-                {/* Custom Ghost Button used here */}
                 <Button variant="ghost" size="sm" className="mt-2 -ml-3 text-xs font-medium">
                     See all
                 </Button>
-            </div>
+            </FilterSection>
 
             {/* --- Price Range Section --- */}
-            <div className="p-4">
-                <div className="flex justify-between items-center mb-3 cursor-pointer">
-                    <h3 className="font-semibold text-base">Price range</h3>
-                    <span className="text-gray-400 text-xs">▲</span>
-                </div>
-
+            <FilterSection title='Price range'>
                 {/* Custom Track/Slider Representation */}
                 <div className="relative pt-2 pb-4">
                     <div className="h-1 bg-blue-100 rounded-full"></div>
@@ -112,14 +95,9 @@ export default function ProductFilters() {
                 <Button variant="outline" size="md" block className="bg-white border-[#DEE2E7] hover:border-blue-400 shadow-sm text-blue-600">
                     Apply
                 </Button>
-            </div>
+            </FilterSection>
 
-            {/* --- Condition Section --- */}
-            <div className="p-4">
-                <div className="flex justify-between items-center mb-3 cursor-pointer">
-                    <h3 className="font-semibold text-base">Condition</h3>
-                    <span className="text-gray-400 text-xs">▲</span>
-                </div>
+            <FilterSection title='Condition'>
                 <div className="flex flex-col gap-2">
                     {[
                         { label: 'Any', value: 'any' },
@@ -137,14 +115,10 @@ export default function ProductFilters() {
                         />
                     ))}
                 </div>
-            </div>
+            </FilterSection>
 
             {/* --- Ratings Section --- */}
-            <div className="p-4">
-                <div className="flex justify-between items-center mb-3 cursor-pointer">
-                    <h3 className="font-semibold text-base">Ratings</h3>
-                    <span className="text-gray-400 text-xs">▲</span>
-                </div>
+            <FilterSection title='Ratings'>
                 <div className="flex flex-col gap-2">
                     {[5, 4, 3, 2, 1].map((stars) => (
                         <div key={stars} className="flex items-center gap-1">
@@ -156,6 +130,34 @@ export default function ProductFilters() {
                             />
                         </div>
                     ))}
+                </div>
+            </FilterSection>
+
+        </div>
+    );
+}
+
+interface FilterSectionProps {
+    title: string;
+    children: ReactNode;
+    defaultOpen?: boolean;
+}
+
+function FilterSection(props: FilterSectionProps) {
+    const { title, children, defaultOpen= 'true' } = props;
+    const [isOpen, setIsOpen] = useState(defaultOpen);
+    return (
+        <div className="p-4">
+            <div onClick={() => setIsOpen(!isOpen)} className="flex justify-between items-center mb-3 cursor-pointer select-none group">
+                <h3 className="font-semibold text-base text-[#1C1C1C]">{title}</h3>
+                <ChevronIcon className="text-[#8B96A5] group-hover:text-gray-600 transition-colors" direction={isOpen ? "up" : "down"} />
+            </div>
+            <div className={cn(
+                "grid transition-all duration-200 ease-in-out",
+                isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0 overflow-hidden"
+            )}>
+                <div className="overflow-hidden">
+                    {children}
                 </div>
             </div>
 
