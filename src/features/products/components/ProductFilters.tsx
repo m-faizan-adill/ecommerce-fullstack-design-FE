@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Checkbox, Radio } from '@/components/ui/FormChecks';
-import { Button } from '@/components/ui/Button'; // Apne sahi path se import karein
+import { Button } from '@/components/ui/Button'; 
 import Rating from '@/components/ui/Rating';
 import { Input } from '@/components/ui/FormFields.tsx';
 
