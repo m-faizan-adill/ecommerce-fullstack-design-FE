@@ -4,6 +4,7 @@ import SavedForLater from "@/features/carts/components/SavedForLater";
 import TrustFeatures from "@/features/carts/components/TrustFeatures";
 import CartItemsList from "@/features/carts/components/CartItemsList";
 import OrderSummary from "@/features/carts/components/OrderSummary";
+import PromoBanner from "@/features/carts/components/PromoBanner";
 
 
 export default function CartPage() {
@@ -24,7 +25,7 @@ export default function CartPage() {
 
         <TrustFeatures />
         <SavedForLater />
-
+        <PromoBanner />
       </main>
 
       <Footer />
