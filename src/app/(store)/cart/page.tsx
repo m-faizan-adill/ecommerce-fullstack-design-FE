@@ -5,9 +5,11 @@ import TrustFeatures from "@/features/carts/components/TrustFeatures";
 import CartItemsList from "@/features/carts/components/CartItemsList";
 import OrderSummary from "@/features/carts/components/OrderSummary";
 import PromoBanner from "@/features/carts/components/PromoBanner";
+import { getCarts } from "@/features/carts/services/cart.service";
 
+export default async function CartPage() {
+  const carts = await getCarts();
 
-export default function CartPage() {
   return (
     <div className="bg-[#F7FAFC] min-h-screen flex flex-col font-sans">
       <Header />
@@ -18,7 +20,7 @@ export default function CartPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
 
-          <CartItemsList />
+          <CartItemsList carts={carts} />
           <OrderSummary />
 
         </div>

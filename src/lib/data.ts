@@ -1,4 +1,4 @@
-import { Product } from "@/types";
+import { CartItem, Product } from "@/types";
 
 export const categories = [
   "Automobiles",
@@ -33,6 +33,42 @@ export const products: Product[] = [
   { id: "P-1010", name: "Jeans shorts for men blue color", price: 10.30, image: "/assets/Layout/alibaba/Image/cloth/Bitmap.png", description: "Slim fit jeans shorts", category: "Clothes", stock: 80, rating: 3.5 },
   { id: "P-1011", name: "Brown winter coat medium size", price: 12.50, image: "/assets/Layout/alibaba/Image/cloth/Bitmap (2).png", description: "Warm winter coat", category: "Clothes", stock: 45, rating: 3 },
   { id: "P-1012", name: "Jeans bag for travel for men", price: 34.00, image: "/assets/Layout/alibaba/Image/cloth/image 24.png", description: "Durable travel bag", category: "Accessories", stock: 60, rating: 4 },
+];
+
+export const carts: CartItem[] = [
+  {
+    id: "1",
+    name: "T-shirts with multiple colors, for men and lady",
+    size: "medium",
+    color: "blue",
+    material: "Plastic",
+    seller: "Artel Market",
+    price: 78.99,
+    qty: "9",
+    image: "/assets/Layout/alibaba/Image/cloth/2 1.png", // Paths mapped dynamically to match your dataset assets
+  },
+  {
+    id: "2",
+    name: "Jeans shorts for men blue color",
+    size: "medium",
+    color: "blue",
+    material: "Plastic",
+    seller: "Best factory LLC",
+    price: 39.00,
+    qty: "3",
+    image: "/assets/Layout/alibaba/Image/cloth/Bitmap.png",
+  },
+  {
+    id: "3",
+    name: "Brown winter coat medium size",
+    size: "medium",
+    color: "blue",
+    material: "Plastic",
+    seller: "Artel Market",
+    price: 170.50,
+    qty: "1",
+    image: "/assets/Layout/alibaba/Image/cloth/Bitmap (2).png",
+  }
 ];
 
 export const dealProducts = products.slice(0, 5);

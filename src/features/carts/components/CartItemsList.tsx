@@ -5,53 +5,24 @@ import Link from "next/link";
 import Button from "@/components/ui/Button";
 import { Select } from "@/components/ui/FormSelect";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
+import { CartItem } from "@/types";
 
-const CART_ITEMS = [
-  {
-    id: 1,
-    name: "T-shirts with multiple colors, for men and lady",
-    size: "medium",
-    color: "blue",
-    material: "Plastic",
-    seller: "Artel Market",
-    price: 78.99,
-    qty: "9",
-    image: "/images/polo-blue.png",
-  },
-  {
-    id: 2,
-    name: "T-shirts with multiple colors, for men and lady",
-    size: "medium",
-    color: "blue",
-    material: "Plastic",
-    seller: "Best factory LLC",
-    price: 39.00,
-    qty: "3",
-    image: "/images/backpack-blue.png",
-  },
-  {
-    id: 3,
-    name: "T-shirts with multiple colors, for men and lady",
-    size: "medium",
-    color: "blue",
-    material: "Plastic",
-    seller: "Artel Market",
-    price: 170.50,
-    qty: "1",
-    image: "/images/lamp.png",
-  },
-];
+
 
 const QTY_OPTIONS = Array.from({ length: 10 }, (_, i) => ({
   value: String(i + 1),
   label: `Qty: ${i + 1}`,
 }));
 
-export default function CartItemsList() {
+interface CartItemsListProps {
+  carts: CartItem[];
+}
+
+export default function CartItemsList({ carts }: CartItemsListProps) {
   return (
     <div className="lg:col-span-3 bg-[#FFFFFF] border border-[#DEE2E7] rounded-xl p-5 shadow-sm">
       <div className="flex flex-col divide-y divide-[#DEE2E7]">
-        {CART_ITEMS.map((item) => (
+        {carts.map((item) => (
           <div key={item.id} className="py-5 first:pt-0 last:pb-5 flex flex-col sm:flex-row gap-4 justify-between items-start">
             <div className="flex gap-4">
               <div className="w-20 h-20 border border-[#E0E0E0] rounded-lg p-1.5 flex items-center justify-center bg-[#F7F7F7] shrink-0">
