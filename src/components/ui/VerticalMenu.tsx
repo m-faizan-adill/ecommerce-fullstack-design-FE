@@ -21,7 +21,7 @@ export function VerticalMenu({ items, activeIndex = 0 }: VerticalMenuProps) {
             "border-b border-gray-200 last:border-b-0",
             i === active
               ? "bg-blue-50 text-blue-700 font-medium"
-              : "bg-white text-gray-700 hover:bg-gray-50",
+              : "bg-[#FFFFFF] text-gray-700 hover:bg-gray-50",
           ].join(" ")}
         >
           {item}

@@ -104,7 +104,7 @@ export function DropdownContent({ children, className, align = "left" }: Content
     <div
       role="menu"
       className={cn(
-        "absolute top-full z-50 mt-2 min-w-45 rounded-lg border border-gray-100 bg-white py-1 shadow-lg",
+        "absolute top-full z-50 mt-2 min-w-45 rounded-lg border border-gray-100 bg-[#FFFFFF] py-1 shadow-lg",
         "animate-in fade-in-0 zoom-in-95 duration-150",
         align === "right" ? "right-0" : "left-0",
         className

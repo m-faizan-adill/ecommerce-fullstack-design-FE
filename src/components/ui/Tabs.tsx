@@ -13,7 +13,7 @@ export function Tabs({ tabs, defaultTab = 0, children }: TabsProps) {
  
   return (
     <div className="rounded-lg border border-gray-200 overflow-hidden">
-      <div className="flex border-b border-gray-200 bg-white">
+      <div className="flex border-b border-gray-200 bg-[#FFFFFF]">
         {tabs.map((tab, i) => (
           <button
             key={i}
@@ -29,7 +29,7 @@ export function Tabs({ tabs, defaultTab = 0, children }: TabsProps) {
           </button>
         ))}
       </div>
-      <div className="p-4 min-h-20 bg-white">
+      <div className="p-4 min-h-20 bg-[#FFFFFF]">
         {children}
       </div>
     </div>

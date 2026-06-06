@@ -36,7 +36,7 @@ const COLUMN_CLASSES: Record<NonNullable<ProductGridSkeletonProps["columns"]>, s
 
 function CardSkeleton() {
   return (
-    <div className="flex flex-col bg-white rounded-2xl border border-gray-100 overflow-hidden">
+    <div className="flex flex-col bg-[#FFFFFF] rounded-2xl border border-gray-100 overflow-hidden">
       {/* Image */}
       <Skeleton className="aspect-square w-full rounded-none" />
 

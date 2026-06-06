@@ -13,7 +13,7 @@ export default function ProductCard({ product, isFavorite, viewMode = 'grid' }: 
 
   if (viewMode === 'list') {
     return (
-      <div className="bg-white border border-gray-200 rounded-lg p-4 w-full flex flex-col sm:flex-row gap-5 items-center sm:items-start relative transition-all">
+      <div className="bg-[#FFFFFF] border border-gray-200 rounded-lg p-4 w-full flex flex-col sm:flex-row gap-5 items-center sm:items-start relative transition-all">
 
         {/* Absolute Wishlist Button (Top Right Corner) */}
         <div className="absolute top-4 right-4 z-10">
@@ -78,7 +78,7 @@ export default function ProductCard({ product, isFavorite, viewMode = 'grid' }: 
 
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-4 w-full max-w-sm">
+    <div className="bg-[#FFFFFF] border border-gray-200 rounded-lg p-4 w-full max-w-sm">
 
       {/* Image */}
       <div className="relative w-full h-48">

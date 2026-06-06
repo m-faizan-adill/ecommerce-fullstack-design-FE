@@ -13,7 +13,7 @@ export function TabPills({ tabs, defaultTab = 0, children }: TabPillsProps) {
  
   return (
     <div className="rounded-lg border border-gray-200 overflow-hidden">
-      <div className="flex gap-1 p-2 bg-white border-b border-gray-200">
+      <div className="flex gap-1 p-2 bg-[#FFFFFF] border-b border-gray-200">
         {tabs.map((tab, i) => (
           <button
             key={i}
@@ -29,7 +29,7 @@ export function TabPills({ tabs, defaultTab = 0, children }: TabPillsProps) {
           </button>
         ))}
       </div>
-      <div className="p-4 min-h-20 bg-white">
+      <div className="p-4 min-h-20 bg-[#FFFFFF]">
         {children}
       </div>
     </div>

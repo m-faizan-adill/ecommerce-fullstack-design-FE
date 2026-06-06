@@ -110,7 +110,7 @@ export function CollapsibleTable({ groups, className }: CollapsibleTableProps) {
               <Fragment key={`g-${gi}`}>
                 {/* Group heading row */}
                 <tr
-                  className="border-b border-gray-200 bg-white hover:bg-gray-50 cursor-pointer transition-colors"
+                  className="border-b border-gray-200 bg-[#FFFFFF] hover:bg-gray-50 cursor-pointer transition-colors"
                   onClick={() => toggle(gi)}
                 >
                   <td colSpan={3} className="px-4 py-2.5">
@@ -129,7 +129,7 @@ export function CollapsibleTable({ groups, className }: CollapsibleTableProps) {
                   group.rows.map((row, ri) => (
                     <tr
                       key={`g-${gi}-r-${ri}`}
-                      className="border-b border-gray-200 last:border-b-0 bg-white hover:bg-gray-50 transition-colors"
+                      className="border-b border-gray-200 last:border-b-0 bg-[#FFFFFF] hover:bg-gray-50 transition-colors"
                     >
                       <td className="pl-10 pr-4 py-2.5 text-gray-600 w-40">{row.col1}</td>
                       <td className="px-4 py-2.5 text-gray-600 border-l border-gray-200 w-36">{row.col2}</td>
@@ -166,7 +166,7 @@ export function LargeTable({ columns, rows, className }: LargeTableProps) {
     <div className={cn("rounded-lg border border-gray-200 overflow-hidden", className)}>
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b border-gray-200 bg-white">
+          <tr className="border-b border-gray-200 bg-[#FFFFFF]">
             {columns.map((col, i) => (
               <th
                 key={i}

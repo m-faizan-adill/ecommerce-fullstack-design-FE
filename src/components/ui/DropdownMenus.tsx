@@ -88,7 +88,7 @@ interface DropdownShellProps {
 
 export function DropdownShell({ children, className }: DropdownShellProps) {
   return (
-    <div className={cn("rounded-lg border border-gray-200 bg-white shadow-sm overflow-hidden py-1", className)}>
+    <div className={cn("rounded-lg border border-gray-200 bg-[#FFFFFF] shadow-sm overflow-hidden py-1", className)}>
       {children}
     </div>
   );
@@ -149,7 +149,7 @@ export function CheckboxDropdown({ items: initial, className, onChange }: Checkb
             />
             <span className={cn(
               "h-4 w-4 rounded-sm border-2 transition-colors",
-              item.checked ? "border-blue-600 bg-blue-600" : "border-gray-300 bg-white"
+              item.checked ? "border-blue-600 bg-blue-600" : "border-gray-300 bg-[#FFFFFF]"
             )} />
             {item.checked && (
               <svg className="absolute h-2.5 w-2.5 text-white pointer-events-none" viewBox="0 0 12 10" fill="none">
@@ -226,7 +226,7 @@ export function SearchableDropdown({
             >
               <span className="relative inline-flex items-center justify-center shrink-0">
                 <input type="checkbox" checked={item.checked} onChange={() => toggle(item.label)} className="peer sr-only" />
-                <span className={cn("h-4 w-4 rounded-sm border-2 transition-colors", item.checked ? "border-blue-600 bg-blue-600" : "border-gray-300 bg-white")} />
+                <span className={cn("h-4 w-4 rounded-sm border-2 transition-colors", item.checked ? "border-blue-600 bg-blue-600" : "border-gray-300 bg-[#FFFFFF]")} />
                 {item.checked && (
                   <svg className="absolute h-2.5 w-2.5 text-white pointer-events-none" viewBox="0 0 12 10" fill="none">
                     <path d="M1 5l3.5 3.5L11 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

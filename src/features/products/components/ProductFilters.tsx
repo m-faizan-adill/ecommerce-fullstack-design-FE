@@ -15,7 +15,7 @@ export default function ProductFilters() {
     const [selectedCondition, setSelectedCondition] = useState<string>('any');
 
     return (
-        <div className="w-60 bg-white border border-[#DEE2E7] rounded-md divide-y divide-[#DEE2E7] text-[#1C1C1C]">
+        <div className="w-60 border-t border-[#DEE2E7] divide-y divide-[#DEE2E7] text-[#1C1C1C]">
 
             {/* --- Category Section --- */}
             <FilterSection title='Category'>
@@ -66,8 +66,8 @@ export default function ProductFilters() {
                 <div className="relative pt-2 pb-4">
                     <div className="h-1 bg-blue-100 rounded-full"></div>
                     <div className="absolute top-1.5 left-[20%] right-[30%] h-1 bg-[#0D6EFD] rounded-full"></div>
-                    <div className="absolute top-0 left-[20%] w-5 h-5 bg-white border border-[#0D6EFD] rounded-full shadow cursor-pointer -mt-0.5"></div>
-                    <div className="absolute top-0 right-[30%] w-5 h-5 bg-white border border-[#0D6EFD] rounded-full shadow cursor-pointer -mt-0.5"></div>
+                    <div className="absolute top-0 left-[20%] w-5 h-5 bg-[#FFFFFF] border border-[#0D6EFD] rounded-full shadow cursor-pointer -mt-0.5"></div>
+                    <div className="absolute top-0 right-[30%] w-5 h-5 bg-[#FFFFFF] border border-[#0D6EFD] rounded-full shadow cursor-pointer -mt-0.5"></div>
                 </div>
 
                 <div className="flex gap-2 mb-3">
@@ -78,7 +78,7 @@ export default function ProductFilters() {
                             value={priceMin}
                             onChange={(e) => setPriceMin(e.target.value)}
                             placeholder="0"
-                            className="px-2 py-1.5 h-9 bg-white"
+                            className="px-2 py-1.5 h-9 bg-[#FFFFFF]"
                         />
                     </div>
                     <div className="flex-1">
@@ -88,11 +88,11 @@ export default function ProductFilters() {
                             value={priceMax}
                             onChange={(e) => setPriceMax(e.target.value)}
                             placeholder="999999"
-                            className="px-2 py-1.5 h-9 bg-white"
+                            className="px-2 py-1.5 h-9 bg-[#FFFFFF]"
                         />
                     </div>
                 </div>
-                <Button variant="outline" size="md" block className="bg-white border-[#DEE2E7] hover:border-blue-400 shadow-sm text-blue-600">
+                <Button variant="outline" size="md" block className="bg-[#FFFFFF] border-[#DEE2E7] hover:border-blue-400 shadow-sm text-blue-600">
                     Apply
                 </Button>
             </FilterSection>
@@ -147,8 +147,8 @@ function FilterSection(props: FilterSectionProps) {
     const { title, children, defaultOpen= 'true' } = props;
     const [isOpen, setIsOpen] = useState(defaultOpen);
     return (
-        <div className="p-4">
-            <div onClick={() => setIsOpen(!isOpen)} className="flex justify-between items-center mb-3 cursor-pointer select-none group">
+        <div className={cn("p-4", !isOpen && "p-2")}>
+            <div onClick={() => setIsOpen(!isOpen)} className="flex justify-between items-center cursor-pointer select-none group">
                 <h3 className="font-semibold text-base text-[#1C1C1C]">{title}</h3>
                 <ChevronIcon className="text-[#8B96A5] group-hover:text-gray-600 transition-colors" direction={isOpen ? "up" : "down"} />
             </div>

@@ -54,7 +54,7 @@ export function Select({
         value={current}
         onChange={handleChange}
         className={cn(
-          "w-full appearance-none rounded-lg border bg-white py-2 pl-3 pr-8 text-sm transition-shadow duration-150",
+          "w-full appearance-none rounded-lg border bg-[#FFFFFF] py-2 pl-3 pr-8 text-sm transition-shadow duration-150",
           "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
           "disabled:opacity-50 disabled:cursor-not-allowed",
           current ? "text-gray-900 border-gray-300" : "text-gray-400 border-gray-300",
@@ -117,7 +117,7 @@ export function MultiSelect({
         type="button"
         onClick={() => setOpen((o) => !o)}
         className={cn(
-          "w-full flex items-center justify-between rounded-lg border border-gray-300 bg-white py-2 pl-3 pr-3 text-sm transition-shadow",
+          "w-full flex items-center justify-between rounded-lg border border-gray-300 bg-[#FFFFFF] py-2 pl-3 pr-3 text-sm transition-shadow",
           "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
           selected.length ? "text-gray-900" : "text-gray-400"
         )}
@@ -137,7 +137,7 @@ export function MultiSelect({
         <span className="truncate">{displayLabel}</span>
       </Button>
       {open && (
-        <ul className="absolute z-20 mt-1 w-full rounded-lg border border-gray-200 bg-white shadow-lg py-1 max-h-48 overflow-auto">
+        <ul className="absolute z-20 mt-1 w-full rounded-lg border border-gray-200 bg-[#FFFFFF] shadow-lg py-1 max-h-48 overflow-auto">
           {options.map((opt) => (
             <li key={opt.value}>
               <button
@@ -207,7 +207,7 @@ export function TagSelect({
     <div ref={ref} className={cn("relative w-full", className)}>
       <div
         className={cn(
-          "flex flex-wrap items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-2 py-1.5 min-h-9.5 cursor-pointer",
+          "flex flex-wrap items-center gap-1.5 rounded-lg border border-gray-300 bg-[#FFFFFF] px-2 py-1.5 min-h-9.5 cursor-pointer",
           "focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 transition-shadow"
         )}
         onClick={() => setOpen((o) => !o)}
@@ -217,7 +217,7 @@ export function TagSelect({
           return (
             <span
               key={v}
-              className="inline-flex items-center gap-1 rounded border border-gray-300 bg-white px-2 py-0.5 text-xs text-gray-700"
+              className="inline-flex items-center gap-1 rounded border border-gray-300 bg-[#FFFFFF] px-2 py-0.5 text-xs text-gray-700"
             >
               {label}
               <button
@@ -237,7 +237,7 @@ export function TagSelect({
       </div>
 
       {open && available.length > 0 && (
-        <ul className="absolute z-20 mt-1 w-full rounded-lg border border-gray-200 bg-white shadow-lg py-1 max-h-48 overflow-auto">
+        <ul className="absolute z-20 mt-1 w-full rounded-lg border border-gray-200 bg-[#FFFFFF] shadow-lg py-1 max-h-48 overflow-auto">
           {available.map((opt) => (
             <li key={opt.value}>
               <button
@@ -371,7 +371,7 @@ export function Datepicker({
         type="button"
         onClick={() => setOpen((o) => !o)}
         className={cn(
-          "inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm transition-shadow",
+          "inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-[#FFFFFF] px-3 py-2 text-sm transition-shadow",
           "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
           selected ? "text-gray-900" : "text-gray-400",
           open && "ring-2 ring-blue-500 border-blue-500"
@@ -389,7 +389,7 @@ export function Datepicker({
 
       {/* Calendar dropdown */}
       {open && (
-        <div className="absolute z-30 mt-1 w-56 rounded-xl border border-gray-200 bg-white shadow-xl">
+        <div className="absolute z-30 mt-1 w-56 rounded-xl border border-gray-200 bg-[#FFFFFF] shadow-xl">
           {/* Header */}
           <div className="flex items-center justify-between px-3 py-2 border-b border-gray-100">
             <button type="button" onClick={prevMonth} className="p-1 rounded hover:bg-gray-100 transition-colors" aria-label="Previous month">

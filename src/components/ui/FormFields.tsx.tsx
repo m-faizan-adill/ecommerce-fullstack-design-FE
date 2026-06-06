@@ -21,7 +21,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     <input
       ref={ref}
       className={cn(
-        "w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900",
+        "w-full rounded-lg border border-gray-300 bg-[#FFFFFF] px-3 py-2 text-sm text-gray-900",
         "placeholder:text-gray-400",
         "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
         "disabled:opacity-50 disabled:cursor-not-allowed",
@@ -44,7 +44,7 @@ export const BaseTextarea = forwardRef<HTMLTextAreaElement, BaseTextareaProps>(
     <textarea
       ref={ref}
       className={cn(
-        "w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900",
+        "w-full rounded-lg border border-gray-300 bg-[#FFFFFF] px-3 py-2 text-sm text-gray-900",
         "placeholder:text-gray-400 resize-none",
         "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
         "disabled:opacity-50 disabled:cursor-not-allowed",
@@ -117,7 +117,7 @@ export function LabeledSelect({
       {hint && <p className="text-xs text-orange-500">{hint}</p>}
       <select
         className={cn(
-          "w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900",
+          "w-full rounded-lg border border-gray-300 bg-[#FFFFFF] px-3 py-2 text-sm text-gray-900",
           "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
           "disabled:opacity-50 disabled:cursor-not-allowed appearance-none",
           "bg-[url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E\")] bg-no-repeat bg-position-[right_0.75rem_center] bg-size-[1rem_1rem]",
@@ -187,7 +187,7 @@ export function RichTextarea({
       {label && <label className="text-sm font-medium text-gray-700">{label}</label>}
       <div className={cn("rounded-lg border border-gray-300 overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent", className)}>
         {/* Toolbar */}
-        <div className="flex items-center gap-0.5 border-b border-gray-200 px-2 py-1 bg-white">
+        <div className="flex items-center gap-0.5 border-b border-gray-200 px-2 py-1 bg-[#FFFFFF]">
           {TOOLBAR_ACTIONS.map((action) => (
             <button
               key={action.title}
@@ -206,7 +206,7 @@ export function RichTextarea({
         <textarea
           rows={rows}
           placeholder={placeholder}
-          className="w-full bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 resize-none focus:outline-none"
+          className="w-full bg-[#FFFFFF] px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 resize-none focus:outline-none"
         />
       </div>
     </div>
@@ -275,7 +275,7 @@ export function SearchInput({
         value={currentValue}
         onChange={handleChange}
         className={cn(
-          "w-full rounded-lg border border-gray-300 bg-white py-2 text-sm text-gray-900",
+          "w-full rounded-lg border border-gray-300 bg-[#FFFFFF] py-2 text-sm text-gray-900",
           "placeholder:text-gray-400",
           "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
           "transition-shadow duration-150",
@@ -332,7 +332,7 @@ export function NumberInput({
         type="number"
         value={value}
         onChange={(e) => update(Number(e.target.value))}
-        className="w-12 h-9 text-center text-sm font-medium text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        className="w-12 h-9 text-center text-sm font-medium text-gray-900 bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
         aria-label="Number value"
       />
       <button
@@ -397,7 +397,7 @@ export const GroupInput = forwardRef<HTMLInputElement, InputProps>(
     <input
       ref={ref}
       className={cn(
-        "flex-1 min-w-0 border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900",
+        "flex-1 min-w-0 border border-gray-300 bg-[#FFFFFF] px-3 py-2 text-sm text-gray-900",
         "placeholder:text-gray-400",
         "focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500",
         "disabled:opacity-50 disabled:cursor-not-allowed",

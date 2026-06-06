@@ -15,7 +15,7 @@ export default function ProductToolbar(props: ProductToolbarProps) {
     const [sort, setSort] = useState("featured");
 
     return (
-        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between bg-white border border-gray-200 rounded-lg p-3">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between bg-[#FFFFFF] border border-gray-200 rounded-lg p-3">
 
             {/* Left */}
             <div className="flex items-center gap-3 text-sm text-gray-600">

@@ -58,7 +58,7 @@ export function PageButton({ active = false, children, className, ...props }: Pa
         "inline-flex h-8 min-w-8 items-center justify-center rounded border px-2 text-sm transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1",
         active
           ? "border-blue-600 bg-blue-600 text-white font-semibold"
-          : "border-gray-300 bg-white text-gray-600 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed",
+          : "border-gray-300 bg-[#FFFFFF] text-gray-600 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed",
         className,
       ].join(" ")}
     >
@@ -121,7 +121,7 @@ export function PaginationWithSelector({
           setPerPage(Number(e.target.value));
           setCurrent(1);
         }}
-        className="ml-2 h-8 rounded border border-gray-300 bg-white px-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="ml-2 h-8 rounded border border-gray-300 bg-[#FFFFFF] px-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         aria-label="Items per page"
       >
         {perPageOptions.map((opt) => (

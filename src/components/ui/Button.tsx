@@ -22,7 +22,7 @@ const base =
 
 const variantStyles: Record<Variant, string> = {
   filled: "text-white bg-gradient-to-r from-[#127FFF] to-[#0067FF] hover:brightness-110 active:brightness-95 border-0",
-  outline: "text-[#0067FF] bg-white border border-[#0067FF]/40 hover:bg-blue-50 active:bg-blue-100",
+  outline: "text-[#0067FF] bg-[#FFFFFF] border border-[#0067FF]/40 hover:bg-blue-50 active:bg-blue-100",
   ghost: "text-[#0067FF] bg-transparent border-0 hover:bg-blue-50 active:bg-blue-100",
 };
 
@@ -47,7 +47,7 @@ export const BtnIcon = ({ variant = "filled" }: { variant?: Variant; }) => (
     className={cn(
       "inline-flex items-center justify-center rounded-[3px] shrink-0",
       "h-3.5 w-3.5",
-      variant === "filled" ? "bg-white/80" : "bg-[#0067FF]"
+      variant === "filled" ? "bg-[#FFFFFF]/80" : "bg-[#0067FF]"
     )}
   />
 );
