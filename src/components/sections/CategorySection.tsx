@@ -24,7 +24,7 @@ export default function CategorySection({
 
   return (
     <section className="lg:px-6 pb-6">
-      <div className="bg-white md:border border-gray-200 rounded">
+      <div className="bg-[#FFFFFF] md:border border-gray-200 rounded">
 
         <div className="hidden md:grid rounded overflow-hidden"
           style={{
@@ -39,7 +39,7 @@ export default function CategorySection({
               <h2 className="font-bold text-white text-lg leading-snug">{title}</h2>
               <a
                 href="#"
-                className="mt-2 inline-block bg-white text-gray-800 text-xs px-3 py-1 rounded hover:bg-gray-100 w-fit"
+                className="mt-2 inline-block bg-[#FFFFFF] text-gray-800 text-xs px-3 py-1 rounded hover:bg-gray-100 w-fit"
               >
                 Source now
               </a>
@@ -71,7 +71,7 @@ export default function CategorySection({
             <a
               key={`r2-${i}`}
               href="#"
-              className="flex flex-col justify-between border border-gray-200 p-3 bg-white hover:bg-gray-50 transition-colors"
+              className="flex flex-col justify-between border border-gray-200 p-3 bg-[#FFFFFF] hover:bg-gray-50 transition-colors"
               style={{ gridColumnStart: i + 2 }}
             >
               <div>
@@ -98,7 +98,7 @@ export default function CategorySection({
               <a
                 key={i}
                 href="#"
-                className="shrink-0 w-36 p-3 flex flex-col items-start md:bg-white hover:bg-gray-50 transition-colors"
+                className="shrink-0 w-36 p-3 flex flex-col items-start md:bg-[#FFFFFF] hover:bg-gray-50 transition-colors"
               >
                 <div className="relative w-full h-24 mb-2">
                   <Image src={item.image} alt={item.name} fill className="object-contain mix-blend-multiply" />

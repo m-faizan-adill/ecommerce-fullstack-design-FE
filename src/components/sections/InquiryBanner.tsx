@@ -13,13 +13,13 @@ export default function InquiryBanner() {
             <p className="text-sm text-blue-100 mb-4 hidden lg:block">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
             </p>
-            <button className="lg:hidden bg-white text-blue-600 text-sm px-4 py-2 rounded font-medium hover:bg-blue-50">
+            <button className="lg:hidden bg-[#FFFFFF] text-blue-600 text-sm px-4 py-2 rounded font-medium hover:bg-blue-50">
               Send inquiry
             </button>
           </div>
 
           {/* Right form - desktop only */}
-          <div className="hidden lg:block w-80 bg-white m-4 rounded p-5 shrink-0">
+          <div className="hidden lg:block w-80 bg-[#FFFFFF] m-4 rounded p-5 shrink-0">
             <h3 className="font-medium text-gray-800 mb-4">Send quote to suppliers</h3>
             <p className="text-sm text-gray-500 mb-2">What item you need?</p>
             <textarea

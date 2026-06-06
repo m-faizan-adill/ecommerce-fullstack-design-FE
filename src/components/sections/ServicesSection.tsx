@@ -17,7 +17,7 @@ export default function ServicesSection() {
             <Image src={service.image} alt={service.label} fill className="object-cover" />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
             <div className="absolute bottom-0 left-0 right-0 p-3 text-white">
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mb-2 text-sm">
+              <div className="w-8 h-8 bg-[#FFFFFF]/20 rounded-full flex items-center justify-center mb-2 text-sm">
                 {service.icon}
               </div>
               <p className="text-xs font-medium leading-tight">{service.label}</p>

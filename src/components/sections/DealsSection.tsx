@@ -39,7 +39,7 @@ export default function DealsSection() {
 
   return (
     <section className="lg:px-6 py-6">
-      <div className="bg-white md:border border-gray-200 rounded-lg overflow-hidden">
+      <div className="bg-[#FFFFFF] md:border border-gray-200 rounded-lg overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr]">
 
           {/* Left Side */}

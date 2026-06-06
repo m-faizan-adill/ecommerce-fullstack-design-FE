@@ -10,7 +10,7 @@ export default function RecommendedSection() {
           <a
             key={product.id}
             href="#"
-            className="bg-white border border-gray-200 rounded p-3 hover:shadow-md transition-shadow group"
+            className="bg-[#FFFFFF] border border-gray-200 rounded p-3 hover:shadow-md transition-shadow group"
           >
             <div className="relative w-full h-36 mb-3">
               <Image

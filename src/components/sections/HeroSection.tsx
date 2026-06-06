@@ -4,10 +4,10 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <div className="lg:px-6 lg:pt-6">
-      <div className="flex items-stretch gap-3 bg-white lg:border lg:border-gray-200 lg:rounded lg:p-4">
+      <div className="flex items-stretch gap-3 bg-[#FFFFFF] lg:border lg:border-gray-200 lg:rounded lg:p-4">
 
         {/* Category sidebar - desktop only */}
-        <aside className="hidden lg:block w-48 shrink-0 bg-white">
+        <aside className="hidden lg:block w-48 shrink-0 bg-[#FFFFFF]">
           <ul>
             {categories.map((cat, i) => (
               <li key={cat}>
@@ -33,7 +33,7 @@ export default function HeroSection() {
               </h1>
               <a
                 href="#"
-                className="inline-block bg-white text-gray-700 text-sm px-4 py-1.5 rounded"
+                className="inline-block bg-[#FFFFFF] text-gray-700 text-sm px-4 py-1.5 rounded"
               >
                 Learn more
               </a>
@@ -59,7 +59,7 @@ export default function HeroSection() {
             <button className="w-full bg-blue-600 text-white text-xs py-1.5 rounded hover:bg-blue-700">
               Join now
             </button>
-            <button className="w-full bg-white border border-gray-300 text-blue-600 text-xs py-1.5 rounded hover:bg-gray-50">
+            <button className="w-full bg-[#FFFFFF] border border-gray-300 text-blue-600 text-xs py-1.5 rounded hover:bg-gray-50">
               Log in
             </button>
           </div>

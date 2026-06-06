@@ -13,8 +13,8 @@ export default function Header() {
     <>
       <MobileSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
-      {/* Top bar - desktop only */}
-      <div className="w-full border-b border-gray-200 bg-white">
+      {/* Top bar */}
+      <div className="w-full border-b border-gray-200 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto hidden lg:flex items-center justify-between py-2 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link href="#" className="flex items-center gap-2">
@@ -67,7 +67,7 @@ export default function Header() {
       </div>
 
       {/* Mobile top bar */}
-      <div className="flex lg:hidden items-center justify-between px-4 py-3 bg-white border-b border-gray-200">
+      <div className="flex lg:hidden items-center justify-between px-4 py-3 bg-[#FFFFFF] border-b border-gray-200">
         <div className="flex gap-4">
           <button onClick={() => setSidebarOpen(true)}>
             <Menu size={22} className="text-gray-700" />
@@ -89,7 +89,7 @@ export default function Header() {
       </div>
 
       {/* Mobile search */}
-      <div className="flex lg:hidden px-4 py-2 bg-white border-b border-gray-100">
+      <div className="flex lg:hidden px-4 py-2 bg-[#FFFFFF] border-b border-gray-100">
         <div className="flex w-full border border-blue-600 rounded overflow-hidden">
           <Search size={16} className="text-gray-400 m-auto ml-3" />
           <input
@@ -101,7 +101,7 @@ export default function Header() {
       </div>
 
       {/* Mobile category tabs */}
-      <div className="flex lg:hidden gap-2 px-4 py-2 overflow-x-auto scrollbar-hide bg-white border-b border-gray-100">
+      <div className="flex lg:hidden gap-2 px-4 py-2 overflow-x-auto scrollbar-hide bg-[#FFFFFF] border-b border-gray-100">
         {["All category", "Gadgets", "Clothes", "Accessories", "Electronics"].map((cat) => (
           <button
             key={cat}
@@ -116,6 +116,7 @@ export default function Header() {
       <div className="hidden lg:flex items-center justify-between text-sm">
         <SecondaryHeader />
       </div>
+      
     </>
   );
 }

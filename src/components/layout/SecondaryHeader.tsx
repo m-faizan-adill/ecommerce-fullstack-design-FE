@@ -6,7 +6,7 @@ import { ShipToSelector } from "./ShipToSelector";
 
 export function SecondaryHeader() {
   return (
-    <div className="w-full border-b border-gray-200 bg-white">
+    <div className="w-full border-b border-gray-200 bg-[#FFFFFF]">
       <div className="max-w-7xl mx-auto flex h-11 items-center justify-between px-4 sm:px-6 lg:px-8">
 
         {/* ── Left: All-category trigger + nav links ── */}
