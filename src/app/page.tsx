@@ -12,34 +12,37 @@ import { homeOutdoorProducts, electronicsProducts } from "@/lib/data";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#F7FAFC]">
+    <div className="min-h-screen">
 
       <Header />
-      <main className="max-w-7xl mx-auto">
-        <HeroSection />
-        <DealsSection />
+      
+      <div className="w-full bg-[#F7FAFC]">
+        <main className="max-w-7xl mx-auto">
+          <HeroSection />
+          <DealsSection />
 
-        {/* Desktop category sections */}
-        <div>
-          <CategorySection
-            title="Home and outdoor"
-            bannerImage="/assets/Image/backgrounds/Group 969.png"
-            items={homeOutdoorProducts}
-            cols={4}
-          />
-          <CategorySection
-            title="Consumer electronics and gadgets"
-            bannerImage="/assets/Image/backgrounds/image 98.png"
-            items={electronicsProducts}
-            cols={4}
-          />
-        </div>
+          {/* Desktop category sections */}
+          <div>
+            <CategorySection
+              title="Home and outdoor"
+              bannerImage="/assets/Image/backgrounds/Group 969.png"
+              items={homeOutdoorProducts}
+              cols={4}
+            />
+            <CategorySection
+              title="Consumer electronics and gadgets"
+              bannerImage="/assets/Image/backgrounds/image 98.png"
+              items={electronicsProducts}
+              cols={4}
+            />
+          </div>
 
-        <InquiryBanner />
-        <RecommendedSection />
-        <ServicesSection />
-        <SuppliersSection />
-      </main>
+          <InquiryBanner />
+          <RecommendedSection />
+          <ServicesSection />
+          <SuppliersSection />
+        </main>
+      </div>
 
       <Footer />
     </div>
