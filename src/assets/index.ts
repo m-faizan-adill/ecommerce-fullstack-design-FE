@@ -6,3 +6,7 @@ export { ArrowIcon } from "./icons/ArrowIcon";
 export { ChevronIcon } from "./icons/ChevronIcon";
 export { HamburgerIcon } from "./icons/HamburgerIcon";
 export { FlagIcon } from "./icons/FlagIcon";
+export { default as SendIcon } from "./icons/SendIcon";
+export { default as SearchIcon } from "./icons/SearchIcon";
+export { default as SecurityIcon } from "./icons/SecurityIcon";
+export { default as InventoryIcon } from "./icons/InventoryIcon";
