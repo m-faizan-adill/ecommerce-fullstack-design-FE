@@ -1,5 +1,6 @@
 "use client";
 
+import { CartIcon } from "@/assets";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 
@@ -29,7 +30,7 @@ export default function SavedForLater() {
                                 variant="outline"
                                 className="w-max mt-auto border border-[#DEE2E7] text-[#0D6EFD] font-medium text-sm rounded-lg px-3 py-2 flex items-center gap-2 hover:bg-blue-50/50 transition"
                             >
-                                <span>🛒</span> Move to cart
+                                <span><CartIcon variant="outline" /></span> Move to cart
                             </Button>
                         </div>
                     </div>
