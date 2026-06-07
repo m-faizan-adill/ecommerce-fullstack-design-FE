@@ -4,7 +4,7 @@ import Button from "@/components/ui/Button";
 
 export default function PromoBanner() {
   return (
-    <div className="relative overflow-hidden bg-[#005ADE] rounded-xl px-7 py-6 text-[#FFFFFF] mt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 shadow-xs min-h-26">
+    <div className="relative overflow-hidden bg-[#005ADE] rounded-lg px-7 py-6 text-[#FFFFFF] mt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 shadow-xs min-h-26">
 
       <div
         className="absolute top-0 left-0 h-full w-[60%] sm:w-[58%] md:w-[62%] bg-[#237CFF] pointer-events-none"

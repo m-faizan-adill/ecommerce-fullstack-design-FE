@@ -14,7 +14,7 @@ export default function SupplierCard({
     worldwideShipping = true,
 }: SupplierCardProps) {
     return (
-        <div className="w-70 h-81.25 bg-[#FFFFFF] border border-gray-200 rounded-xl p-4 shadow-sm flex flex-col justify-between box-border">
+        <div className="w-70 h-81.25 bg-[#FFFFFF] border border-gray-200 rounded-lg p-4 shadow-sm flex flex-col justify-between box-border">
 
             {/* Top Header Segment */}
             <div className="flex items-center gap-3">
