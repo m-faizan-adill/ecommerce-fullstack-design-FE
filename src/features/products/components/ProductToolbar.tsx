@@ -17,60 +17,81 @@ export default function ProductToolbar(props: ProductToolbarProps) {
     const [sort, setSort] = useState("featured");
 
     return (
-        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between bg-[#FFFFFF] border border-gray-200 rounded-lg p-3">
+        <div className="flex items-center justify-between gap-2 w-full bg-[#FFFFFF] border border-gray-200 rounded-lg p-2 md:p-3 shadow-sm">
 
-            {/* Left */}
-            <div className="flex items-center gap-3 text-sm text-gray-600">
-                <span>
-                    {total.toLocaleString()} items
-                </span>
+            {/* Desktop Only Side: Items Count */}
+            <div className="hidden md:flex items-center text-sm font-medium text-gray-600">
+                <span>{total.toLocaleString()} items</span>
             </div>
 
-            {/* Right */}
-            <div className="flex items-center gap-3">
+            {/* Main Responsive Controls Wrapper */}
+            <div className="flex items-center justify-end gap-2.5 sm:gap-3 ml-auto w-full sm:w-auto">
+                
+                {/* Desktop Only Side: Checkbox */}
+                <div className="hidden md:flex items-center shrink-0 mr-2">
+                    <Checkbox label="Verified only" />
+                </div>
 
-                <Checkbox label="Verified only" />
-                {/* Sort */}
-                <Select
-                    value={sort}
-                    onChange={(val) => setSort(val)}
-                    className="w-44"
-                    options={[
-                        { value: "featured", label: "Featured" },
-                        { value: "price_low", label: "Price: Low to High" },
-                        { value: "price_high", label: "Price: High to Low" },
-                    ]}
-                />
+                {/* Sort Filter Control */}
+                <div className="flex-1 md:flex-none md:w-44">
+                    <Select
+                        value={sort}
+                        onChange={(val) => setSort(val)}
+                        className="w-full text-sm font-normal"
+                        placeholder="Sort: Newest"
+                        options={[
+                            { value: "featured", label: "Sort: Newest" },
+                            { value: "price_low", label: "Price: Low to High" },
+                            { value: "price_high", label: "Price: High to Low" },
+                        ]}
+                    />
+                </div>
 
-                {/* View Toggle */}
+                {/* Mobile Only: Filter Button */}
+                <div className="flex-1 md:hidden">
+                    <Button
+                        type="button"
+                        variant="outline"
+                        block
+                        className="text-gray-900 font-normal text-sm border-gray-300 h-9.5 rounded-lg justify-between px-3"
+                        trailingIcon={
+                            <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                            </svg>
+                        }
+                    >
+                        <span>Filter (3)</span>
+                    </Button>
+                </div>
+            </div>
+
+            {/* View Mode Layout Action Toggles */}
+            <div className="shrink-0 pl-1 md:pl-0 border-l border-gray-100 md:border-none">
                 <ButtonGroup>
                     <Button
                         variant={viewMode === "grid" ? "filled" : "outline"}
                         size="sm"
+                        className="h-9.5 px-3"
                         onClick={() => onViewChange("grid")}
                         aria-label="Grid view"
                     >
                         <GridIcon
-                            className={
-                                viewMode === "grid"
-                                    ? "text-white"
-                                    : "text-[#1C1C1C]"
-                            }
+                            className={cn(
+                                viewMode === "grid" ? "text-white" : "text-[#1C1C1C]"
+                            )}
                         />
-
                     </Button>
                     <Button
                         variant={viewMode === "list" ? "filled" : "outline"}
                         size="sm"
+                        className="h-9.5 px-3"
                         onClick={() => onViewChange("list")}
                         aria-label="List view"
                     >
                         <ListIcon
-                            className={
-                                viewMode === "list"
-                                    ? "text-white"
-                                    : "text-[#1C1C1C]"
-                            }
+                            className={cn(
+                                viewMode === "list" ? "text-white" : "text-[#1C1C1C]"
+                            )}
                         />
                     </Button>
                 </ButtonGroup>
@@ -78,7 +99,6 @@ export default function ProductToolbar(props: ProductToolbarProps) {
         </div>
     );
 }
-
 
 interface IconProps {
     className?: string;
