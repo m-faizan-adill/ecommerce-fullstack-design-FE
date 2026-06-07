@@ -9,7 +9,7 @@ export default async function ProductsPage() {
 
     return (
         <div className="bg-[#F7FAFC]">
-            <Header />
+            <Header showBackButton={true} title="Mobile accessory" />
 
             <div className="max-w-7xl mx-auto min-h-screen py-2 px-4 sm:px-6 lg:px-8">
                 <Breadcrumbs />
