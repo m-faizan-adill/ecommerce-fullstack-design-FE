@@ -45,7 +45,7 @@ export const carts: CartItem[] = [
     seller: "Artel Market",
     price: 78.99,
     qty: "9",
-    image: "/assets/Layout/alibaba/Image/cloth/2 1.png", // Paths mapped dynamically to match your dataset assets
+    image: "/assets/Layout/alibaba/Image/cloth/2 1.png",
   },
   {
     id: "2",
