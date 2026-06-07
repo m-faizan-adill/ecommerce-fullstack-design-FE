@@ -1,6 +1,7 @@
 import { ShoppingBag } from "lucide-react";
 import Button from "../ui/Button";
 import Link from "next/link";
+import { ChevronIcon } from "../ui";
 
 export default function Footer() {
   return (
@@ -71,9 +72,9 @@ export default function Footer() {
       <div className="hidden md:block absolute right-6 bottom-24">
       </div>
 
-      <div className="border-t border-gray-100 px-6 py-4 flex items-center justify-between text-xs text-gray-400">
+      <div className="border-t border-gray-100 px-6 py-4 flex items-center justify-between text-xs text-[#606060]">
         <span>© 2026 Ecommerce.</span>
-        <span>English</span>
+        <span className="flex items-center justify-center gap-2">English<ChevronIcon className="text-[#1C1C1C]" direction="up"/></span>
       </div>
     </footer>
   );
