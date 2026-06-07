@@ -41,10 +41,10 @@ export default function CartItemsList({ carts }: CartItemsListProps) {
                 </div>
                 
                 <div className="flex items-center gap-2 mt-3">
-                  <Button variant="outline" size="sm" className="text-[#FA3434] border border-[#DEE2E7] bg-white hover:bg-red-50 hover:text-[#FA3434] px-3 py-1 text-sm rounded-lg">
+                  <Button variant="outline" size="sm" className="text-[#FA3434] border border-[#DEE2E7] bg-[#FFFFFF] hover:bg-red-50 hover:text-[#FA3434] px-3 py-1 text-sm rounded-lg">
                     Remove
                   </Button>
-                  <Button variant="outline" size="sm" className="text-[#0D6EFD] border border-[#DEE2E7] bg-white hover:bg-blue-50 hover:text-[#0D6EFD] px-3 py-1 text-sm rounded-lg">
+                  <Button variant="outline" size="sm" className="text-[#0D6EFD] border border-[#DEE2E7] bg-[#FFFFFF] hover:bg-blue-50 hover:text-[#0D6EFD] px-3 py-1 text-sm rounded-lg">
                     Save for later
                   </Button>
                 </div>
@@ -54,7 +54,7 @@ export default function CartItemsList({ carts }: CartItemsListProps) {
             <div className="flex flex-col sm:items-end justify-between h-full gap-4 w-full sm:w-auto">
               <span className="text-base font-medium leading-5.5 text-right text-[#1C1C1C]">${item.price.toFixed(2)}</span>
               <div className="w-32">
-                <Select options={QTY_OPTIONS} defaultValue={item.qty} placeholder="Qty" className="bg-white border-[#DEE2E7]" />
+                <Select options={QTY_OPTIONS} defaultValue={item.qty} placeholder="Qty" className="bg-[#FFFFFF] border-[#DEE2E7]" />
               </div>
             </div>
           </div>

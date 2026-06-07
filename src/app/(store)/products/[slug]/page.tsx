@@ -171,8 +171,7 @@ export default async function ProductPage(props: ProductPageProps) {
                     {product.description}
                   </p>
 
-                  {/* Structured Specifications Grid Table Mapping */}
-                  <div className="w-141.75 h-45 border border-[#E0E2E6] overflow-hidden bg-white shadow-xs mb-6">
+                  <div className="w-141.75 h-45 border border-[#E0E2E6] overflow-hidden bg-[#FFFFFF] shadow-xs mb-6">
                     {Object.entries(product.specs).map(([key, val]) => (
                       <div
                         key={key}
@@ -184,7 +183,7 @@ export default async function ProductPage(props: ProductPageProps) {
                         </div>
 
                         {/* Right Column (Property Value) */}
-                        <div className="col-span-2 text-[#1C1C1C] p-3 pl-4 font-normal bg-white">
+                        <div className="col-span-2 text-[#1C1C1C] p-3 pl-4 font-normal bg-[#FFFFFF]">
                           {val}
                         </div>
                       </div>
@@ -230,7 +229,7 @@ export default async function ProductPage(props: ProductPageProps) {
 
         </div>
 
-        <div className="mt-8 bg-white border border-gray-200 rounded-lg p-5 shadow-xs">
+        <div className="mt-8 bg-[#FFFFFF] border border-gray-200 rounded-lg p-5 shadow-xs">
           <h3 className="font-semibold text-lg text-[#1C1C1C] mb-4">Related products</h3>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -253,7 +252,7 @@ export default async function ProductPage(props: ProductPageProps) {
                   />
                 </div> */}
                 <div className="w-full max-w-43 aspect-square rounded-md bg-[#EEEEEE] flex items-center justify-center">
-                  <div className="w-[90%] h-[90%] bg-white mix-blend-multiply flex items-center justify-center">
+                  <div className="w-[90%] h-[90%] bg-[#FFFFFF] mix-blend-multiply flex items-center justify-center">
                     <Image
                       src={prod.img}
                       alt={prod.name}
