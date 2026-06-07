@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Search, ShoppingCart, User, MessageSquare, Heart, Menu, ChevronDown, ShoppingBag } from "lucide-react";
+import { Search, Menu, ShoppingBag } from "lucide-react";
 import MobileSidebar from "./MobileSidebar";
 import { SecondaryHeader } from "./SecondaryHeader";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowIcon } from "../ui/ArrowIcon";
+import ProfileIcon from "@/assets/header/profile";
+import ChatIcon from "@/assets/header/chat";
+import CartIcon from "@/assets/header/cart";
+import HeartIcon from "@/assets/header/heart";
 
 interface HeaderProps {
   showBackButton?: boolean;
@@ -27,15 +31,15 @@ export default function Header(props: HeaderProps) {
       <div className="w-full border-b border-gray-200 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto hidden lg:flex items-center justify-between py-2 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <Link href="#" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center shadow-sm">
               <ShoppingBag size={18} className="text-white" />
             </div>
-
             <span className="text-2xl font-semibold text-blue-400">
               Brand
             </span>
           </Link>
+
           {/* Search */}
           <div className="flex flex-1 max-w-xl mx-8">
             <input
@@ -54,31 +58,40 @@ export default function Header(props: HeaderProps) {
             </button>
           </div>
 
-          {/* Icons */}
+          {/* Icons Group wrapped with Next.js Link components */}
           <div className="flex items-center gap-5">
-            <a href="#" className="flex flex-col items-center text-gray-500 hover:text-blue-600">
-              <User size={20} />
-              <span className="text-xs mt-0.5">Profile</span>
-            </a>
-            <a href="#" className="flex flex-col items-center text-gray-500 hover:text-blue-600">
-              <MessageSquare size={20} />
-              <span className="text-xs mt-0.5">Message</span>
-            </a>
-            <a href="#" className="flex flex-col items-center text-gray-500 hover:text-blue-600">
-              <Heart size={20} />
-              <span className="text-xs mt-0.5">Orders</span>
-            </a>
-            <a href="#" className="flex flex-col items-center text-gray-500 hover:text-blue-600">
-              <ShoppingCart size={20} />
-              <span className="text-xs mt-0.5">My cart</span>
-            </a>
+
+            {/* Profile Link */}
+            <Link href="/profile" className="flex flex-col items-center text-[#8B96A5] hover:text-blue-600 transition-colors group">
+              <ProfileIcon className="text-inherit" />
+              <span className="text-xs mt-1">Profile</span>
+            </Link>
+
+            {/* Message Link */}
+            <Link href="/messages" className="flex flex-col items-center text-[#8B96A5] hover:text-blue-600 transition-colors group">
+              <ChatIcon className="text-inherit" />
+              <span className="text-xs mt-1">Message</span>
+            </Link>
+
+            {/* Orders Link */}
+            <Link href="/orders" className="flex flex-col items-center text-[#8B96A5] hover:text-blue-600 transition-colors group">
+              <HeartIcon className="text-inherit" />
+              <span className="text-xs mt-1">Orders</span>
+            </Link>
+
+            {/* Cart Link */}
+            <Link href="/cart" className="flex flex-col items-center text-[#8B96A5] hover:text-blue-600 transition-colors group">
+              <CartIcon className="text-inherit" />
+              <span className="text-xs mt-1">My cart</span>
+            </Link>
+
           </div>
         </div>
       </div>
 
       {/* Mobile top bar */}
       <div className="flex lg:hidden items-center justify-between px-4 py-3 bg-[#FFFFFF] border-b border-gray-200">
-        {/* Left Section: Back Button/Menu and Dynamic Title or Brand Logo grouped together */}
+        {/* Left Section */}
         <div className="flex items-center gap-4">
           {showBackButton ? (
             <button
@@ -98,13 +111,13 @@ export default function Header(props: HeaderProps) {
             </button>
           )}
 
-          {/* Title / Logo yahan parent ke andar hona chahiye strict alignment ke liye */}
+          {/* Title */}
           {title ? (
             <span className="text-base font-semibold text-[#1C1C1C] whitespace-nowrap">
               {title}
             </span>
           ) : (
-            <Link href="#" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <div className="w-7 h-7 bg-blue-500 rounded-lg flex items-center justify-center shadow-sm">
                 <ShoppingBag size={14} className="text-white" />
               </div>
@@ -118,11 +131,14 @@ export default function Header(props: HeaderProps) {
         {/* Right Section Icons */}
         {!hideRightIcons ? (
           <div className="flex items-center gap-3">
-            <ShoppingCart size={22} className="text-gray-700" />
-            <User size={22} className="text-gray-700" />
+            <Link href="/cart" aria-label="View cart">
+              <CartIcon size={22} className="text-[#8B96A5] hover:text-blue-600 transition-colors" />
+            </Link>
+            <Link href="/profile" aria-label="View profile">
+              <ProfileIcon size={22} className="text-[#8B96A5] hover:text-blue-600 transition-colors" />
+            </Link>
           </div>
         ) : (
-          /* Empty block space holder to preserve layout balance if needed */
           <div className="w-10" />
         )}
       </div>
@@ -155,7 +171,6 @@ export default function Header(props: HeaderProps) {
       <div className="hidden lg:flex items-center justify-between text-sm">
         <SecondaryHeader />
       </div>
-
     </>
   );
 }
