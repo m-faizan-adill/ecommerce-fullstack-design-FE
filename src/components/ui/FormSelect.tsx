@@ -8,15 +8,8 @@ import {
 } from "react";
 import { cn } from "@/lib/utils";
 import Button from "./Button";
+import { ChevronIcon } from "@/assets";
 
-// ─── Shared chevron ───────────────────────────────────────────────────────────
-function ChevronDown({ className }: { className?: string }) {
-  return (
-    <svg className={cn("h-4 w-4 shrink-0 text-gray-400", className)} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-    </svg>
-  );
-}
 
 // ─── Base Select (single) ─────────────────────────────────────────────────────
 interface SelectOption { value: string; label: string }
@@ -66,7 +59,7 @@ export function Select({
           <option key={o.value} value={o.value}>{o.label}</option>
         ))}
       </select>
-      <ChevronDown className="absolute right-2.5 pointer-events-none" />
+      <ChevronIcon className="h-4 w-4 shrink-0 text-gray-400 absolute right-2.5 pointer-events-none" />
     </div>
   );
 }
@@ -113,25 +106,13 @@ export function MultiSelect({
 
   return (
     <div ref={ref} className={cn("relative w-full", className)}>
-      {/* <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        className={cn(
-          "w-full flex items-center justify-between rounded-lg border border-gray-300 bg-[#FFFFFF] py-2 pl-3 pr-3 text-sm transition-shadow",
-          "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
-          selected.length ? "text-gray-900" : "text-gray-400"
-        )}
-      >
-        <span className="truncate">{displayLabel}</span>
-        <ChevronDown />
-      </button> */}
       <Button
         type="button"
         variant="outline"
         size="md"
         block
         onClick={() => setOpen((o) => !o)}
-        trailingIcon={<ChevronDown className="h-4 w-4 text-[#0067FF]" />}
+        trailingIcon={<ChevronIcon className="h-4 w-4 shrink-0 text-[#0067FF]" />}
         className={!selected.length ? "text-gray-400" : ""}
       >
         <span className="truncate">{displayLabel}</span>
@@ -233,7 +214,7 @@ export function TagSelect({
             </span>
           );
         })}
-        <ChevronDown className="ml-auto" />
+        <ChevronIcon className="h-4 w-4 shrink-0 ml-auto" />
       </div>
 
       {open && available.length > 0 && (
