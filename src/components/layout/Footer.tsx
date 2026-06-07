@@ -1,7 +1,7 @@
-import { ShoppingBag } from "lucide-react";
-import Button from "../ui/Button";
 import Link from "next/link";
-import { ChevronIcon } from "../ui";
+
+import { ShoppingBag } from "lucide-react";
+import { ChevronIcon, Button } from "../ui";
 
 export default function Footer() {
   return (
