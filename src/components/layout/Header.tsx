@@ -6,11 +6,7 @@ import MobileSidebar from "./MobileSidebar";
 import { SecondaryHeader } from "./SecondaryHeader";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowIcon } from "../ui/ArrowIcon";
-import ProfileIcon from "@/assets/header/profile";
-import ChatIcon from "@/assets/header/chat";
-import CartIcon from "@/assets/header/cart";
-import HeartIcon from "@/assets/header/heart";
+import { ArrowIcon, CartIcon, ChatIcon, ProfileIcon, HeartIcon } from "../../assets";
 
 interface HeaderProps {
   showBackButton?: boolean;

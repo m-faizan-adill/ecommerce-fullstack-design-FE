@@ -10,7 +10,7 @@ import {
   DropdownContent,
   DropdownItem,
 } from "@/components/ui/Dropdown";
-import { ChevronIcon } from "@/components/ui/ChevronIcon";
+import { ChevronIcon } from "@/assets";
 
 export function NavLinks() {
   const pathname = usePathname();

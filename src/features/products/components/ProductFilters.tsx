@@ -4,10 +4,10 @@ import { ReactNode, useState } from 'react';
 
 import Rating from '@/components/ui/Rating';
 import { Checkbox, Radio } from '@/components/ui/FormChecks';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui';
 import { Input } from '@/components/ui/FormFields.tsx';
-import { ChevronIcon } from '@/components/ui';
 import { cn } from '@/lib/utils';
+import { ChevronIcon } from '@/assets';
 
 export default function ProductFilters() {
     const [priceMin, setPriceMin] = useState<string>('0');

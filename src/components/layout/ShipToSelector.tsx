@@ -9,9 +9,9 @@ import {
   DropdownContent,
   DropdownItem,
 } from "@/components/ui/Dropdown";
-import { ChevronIcon } from "@/components/ui/ChevronIcon";
 import type { ShippingDestination } from "@/types/nav";
-import { FlagIcon } from "../ui";
+import { FlagIcon, ChevronIcon } from "@/assets";
+
 
 interface ShipToSelectorProps {
   defaultCountry?: string;
@@ -44,14 +44,6 @@ export function ShipToSelector({
       >
         <span className="text-gray-600 font-normal">Ship to</span>
 
-        {/* Flag rendered as emoji — swap for <Image> if you use SVG flags */}
-        {/* <span
-          className="text-base leading-none"
-          role="img"
-          aria-label={selected.label}
-        >
-          {selected.flagEmoji}
-        </span> */}
         <FlagIcon
           countryCode={selected.countryCode}
           label={selected.label}
@@ -72,13 +64,6 @@ export function ShipToSelector({
               "font-semibold text-black bg-gray-50"
             )}
           >
-            {/* <span
-              role="img"
-              aria-label={dest.label}
-              className="text-base leading-none"
-            >
-              {dest.flagEmoji}
-            </span> */}
             <FlagIcon
               countryCode={dest.countryCode}
               label={dest.label}

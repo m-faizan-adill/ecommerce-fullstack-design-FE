@@ -1,7 +1,9 @@
 import Link from "next/link";
 
 import { ShoppingBag } from "lucide-react";
-import { ChevronIcon, Button } from "../ui";
+import { ChevronIcon } from "@/assets";
+import { Button } from "../ui";
+
 
 export default function Footer() {
   return (
@@ -15,9 +17,7 @@ export default function Footer() {
             <span className="px-3 text-gray-400 flex items-center text-sm">✉</span>
             <input type="email" placeholder="Email" className="flex-1 py-2 text-sm outline-none" />
           </div>
-          {/* <button className="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700">
-            Subscribe
-          </button> */}
+  
           <Button variant="filled" size="md">Subscribe</Button>
 
         </div>

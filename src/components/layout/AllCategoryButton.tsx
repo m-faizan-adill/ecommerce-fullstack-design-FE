@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HamburgerIcon } from "@/components/ui/HamburgerIcon";
+import { HamburgerIcon } from "@/assets";
 
 export function AllCategoryButton() {
   return (

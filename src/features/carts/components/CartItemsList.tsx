@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Button from "@/components/ui/Button";
-import { Select } from "@/components/ui/FormSelect";
-import { ArrowIcon } from "@/components/ui/ArrowIcon";
+import { Button } from "@/components/ui";
+import { ArrowIcon } from "@/assets";
 import { CartItem } from "@/types";
+import { Select } from "@/components/ui/FormSelect";
 
 
 
