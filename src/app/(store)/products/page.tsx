@@ -17,7 +17,7 @@ export default async function ProductsPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
 
                     {/* Sidebar */}
-                    <div>
+                    <div className="hidden lg:block">
                         <ProductFilters />
                     </div>
 
