@@ -3,9 +3,11 @@ import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-import { Breadcrumbs, Rating, Button } from "@/components/ui";
+import { Breadcrumbs, Rating } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import SupplierCard from "@/features/products/components/SupplierCard";
+import { Tabs } from "@/components/ui/Tabs";
+import PromoBanner from "@/features/carts/components/PromoBanner";
 
 const MOCK_PRODUCT_DETAIL = {
   id: "gopro-hero-6",
@@ -67,7 +69,7 @@ export default async function ProductPage(props: ProductPageProps) {
         </div>
 
         {/* Product Workspace Panel */}
-        <div className="bg-[#FFFFFF] border border-gray-200 rounded-xl p-4 lg:p-6 grid grid-cols-1 lg:grid-cols-12 gap-8 relative">
+        <div className="bg-[#FFFFFF] border border-gray-200 rounded-lg p-4 lg:p-6 grid grid-cols-1 lg:grid-cols-12 gap-8 relative">
 
           {/* LEFT COLUMN: Gallery View (4 Columns) */}
           <div className="lg:col-span-4 flex flex-col gap-3">
@@ -149,7 +151,8 @@ export default async function ProductPage(props: ProductPageProps) {
           </div>
 
           {/* RIGHT COLUMN: Supplier Details Card Widget (3 Columns) */}
-          <div className="shrink-0 lg:sticky lg:top-4">            <SupplierCard />
+          <div className="shrink-0 lg:sticky lg:top-4">
+            <SupplierCard />
           </div>
 
         </div>
@@ -158,47 +161,55 @@ export default async function ProductPage(props: ProductPageProps) {
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-4 gap-6">
 
           {/* Main Description & Technical Specs Area */}
-          <div className="lg:col-span-3 bg-[#FFFFFF] border border-gray-200 rounded-xl p-6">
+          <div className="lg:col-span-3">
 
-            {/* Tabs Headers Minimal Mockup Row */}
-            <div className="flex items-center gap-6 border-b border-gray-200 pb-3 mb-5 text-sm font-medium text-[#8B96A5]">
-              <span className="text-[#0070F3] border-b-2 border-[#0070F3] pb-3 -mb-3.5 cursor-pointer">Description</span>
-              <span className="hover:text-gray-800 cursor-pointer">Reviews</span>
-              <span className="hover:text-gray-800 cursor-pointer">Shipping</span>
-              <span className="hover:text-gray-800 cursor-pointer">About seller</span>
-            </div>
+            <Tabs
+              tabs={["Description", "Reviews", "Shipping"]}
+              contents={[
+                <div key="desc" className="flex flex-col text-sm">
+                  <p className="text-[#505050] leading-relaxed mb-6">
+                    {product.description}
+                  </p>
 
-            {/* Description Body Paragraphs */}
-            <p className="text-[#505050] text-sm leading-relaxed mb-6">
-              {product.description}
-            </p>
+                  {/* Structured Specifications Grid Table Mapping */}
+                  <div className="w-141.75 h-45 border border-[#E0E2E6] overflow-hidden bg-white shadow-xs mb-6">
+                    {Object.entries(product.specs).map(([key, val]) => (
+                      <div
+                        key={key}
+                        className="grid grid-cols-3 text-sm border-b last:border-b-0 border-[#E0E2E6]"
+                      >
+                        {/* Left Column (Property Key) */}
+                        <div className="bg-[#F1F3F5] text-[#4F5D77] p-3 pl-4 font-normal border-r border-[#E0E2E6]">
+                          {key}
+                        </div>
 
-            {/* Structured Specifications Grid Mapping */}
-            <div className="border border-gray-200 rounded-lg overflow-hidden max-w-lg mb-6">
-              {Object.entries(product.specs).map(([key, val], index) => (
-                <div key={key} className={cn(
-                  "grid grid-cols-3 text-sm p-2.5",
-                  index % 2 === 0 ? "bg-[#FFFFFF]" : "bg-[#F7FAFC]"
-                )}>
-                  <span className="text-[#505050] font-medium pl-2">{key}</span>
-                  <span className="col-span-2 text-[#606060]">{val}</span>
-                </div>
-              ))}
-            </div>
+                        {/* Right Column (Property Value) */}
+                        <div className="col-span-2 text-[#1C1C1C] p-3 pl-4 font-normal bg-white">
+                          {val}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
 
-            {/* Features Checklists Array list */}
-            <div className="flex flex-col gap-2">
-              {product.features.map((feature, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-sm text-[#505050]">
-                  <span className="text-gray-400">✓</span>
-                  <span>{feature}</span>
-                </div>
-              ))}
-            </div>
+                  {/* Features Checklists Array list */}
+                  <div className="flex flex-col gap-2.5">
+                    {product.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-2.5 text-[#505050]">
+                        <span className="text-[#8B96A5] text-xs">✓</span>
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>,
+                <p key="reviews">Customer reviews go here.</p>,
+                <p key="shipping">Shipping information goes here.</p>,
+              ]}
+            />
+
           </div>
 
           {/* Right Side Sticky Panel: "You may like" Section */}
-          <div className="bg-[#FFFFFF] border border-gray-200 rounded-xl p-4 flex flex-col gap-4 h-max">
+          <div className="bg-[#FFFFFF] border border-gray-200 rounded-lg p-4 flex flex-col gap-4 h-max">
             <h3 className="font-semibold text-base text-[#1C1C1C]">You may like</h3>
 
             {/* Map over related layout cards arrays */}
@@ -218,6 +229,55 @@ export default async function ProductPage(props: ProductPageProps) {
           </div>
 
         </div>
+
+        <div className="mt-8 bg-white border border-gray-200 rounded-lg p-5 shadow-xs">
+          <h3 className="font-semibold text-lg text-[#1C1C1C] mb-4">Related products</h3>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              { id: 1, img: "/images/wallet.png", name: "Xiaomi Redmi 8 Original" },
+              { id: 2, img: "/images/smartwatch.png", name: "Xiaomi Redmi 8 Original" },
+              { id: 3, img: "/images/headphones.png", name: "Xiaomi Redmi 8 Original" },
+              { id: 4, img: "/images/shorts.png", name: "Xiaomi Redmi 8 Original" },
+              { id: 5, img: "/images/kettle.png", name: "Xiaomi Redmi 8 Original" },
+              { id: 6, img: "/images/holder.png", name: "Xiaomi Redmi 8 Original" },
+            ].map((prod) => (
+              <div key={prod.id} className="flex flex-col gap-2 cursor-pointer group">
+                {/* Gray Subtle Product Box */}
+                {/* <div className="w-full aspect-square relative bg-[#F7F7F7] rounded border border-gray-100 p-3 flex items-center justify-center overflow-hidden">
+                  <Image
+                    src={prod.img}
+                    alt={prod.name}
+                    fill
+                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div> */}
+                <div className="w-full max-w-43 aspect-square rounded-md bg-[#EEEEEE] flex items-center justify-center">
+                  <div className="w-[90%] h-[90%] bg-white mix-blend-multiply flex items-center justify-center">
+                    <Image
+                      src={prod.img}
+                      alt={prod.name}
+                      width={131}
+                      height={132}
+                      className="object-contain w-[80%] h-[80%]"
+                    />
+                  </div>
+                </div>
+                {/* Meta details alignment */}
+                <div className="flex flex-col pt-1">
+                  <h4 className="text-sm sm:text-base font-normal leading-5 sm:leading-none text-[#505050] group-hover:text-blue-600 transition-colors">
+                    {prod.name}
+                  </h4>
+                  <span className="text-sm sm:text-base font-normal leading-none text-[#8B96A5] mt-1">
+                    $32.00-$40.00
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <PromoBanner />
       </main>
 
       <Footer />
