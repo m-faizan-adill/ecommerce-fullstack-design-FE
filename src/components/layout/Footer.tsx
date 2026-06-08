@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ShoppingBag } from "lucide-react";
 import { ChevronIcon } from "@/assets";
 import { Button } from "../ui";
+import { EmailIcon } from "@/assets";
 
 
 export default function Footer() {
@@ -14,10 +15,10 @@ export default function Footer() {
         <p className="text-sm text-gray-500 mb-4">Get daily news on upcoming offers from many suppliers all over the world</p>
         <div className="flex justify-center gap-2 max-w-sm mx-auto">
           <div className="flex flex-1 border border-gray-300 rounded overflow-hidden">
-            <span className="px-3 text-gray-400 flex items-center text-sm">✉</span>
+            <span className="px-3 text-gray-400 flex items-center text-sm"><EmailIcon /></span>
             <input type="email" placeholder="Email" className="flex-1 py-2 text-sm outline-none" />
           </div>
-  
+
           <Button variant="filled" size="md">Subscribe</Button>
 
         </div>
@@ -74,7 +75,7 @@ export default function Footer() {
 
       <div className="border-t border-gray-100 px-6 py-4 flex items-center justify-between text-xs text-[#606060]">
         <span>© 2026 Ecommerce.</span>
-        <span className="flex items-center justify-center gap-2">English<ChevronIcon className="text-[#1C1C1C]" direction="up"/></span>
+        <span className="flex items-center justify-center gap-2">English<ChevronIcon className="text-[#1C1C1C]" direction="up" /></span>
       </div>
     </footer>
   );
