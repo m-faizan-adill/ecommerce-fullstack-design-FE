@@ -10,3 +10,4 @@ export { default as SendIcon } from "./icons/SendIcon";
 export { default as SearchIcon } from "./icons/SearchIcon";
 export { default as SecurityIcon } from "./icons/SecurityIcon";
 export { default as InventoryIcon } from "./icons/InventoryIcon";
+export { default as EmailIcon } from "./icons/EmailIcon";
