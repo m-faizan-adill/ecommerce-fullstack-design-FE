@@ -7,6 +7,14 @@ import { SecondaryHeader } from "./SecondaryHeader";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowIcon, CartIcon, ChatIcon, ProfileIcon, HeartIcon } from "../../assets";
+import { Button, Select } from "../ui";
+
+const CATEGORY_OPTIONS = [
+  { value: "all", label: "All category" },
+  { value: "cameras", label: "Cameras" },
+  { value: "laptops", label: "Laptops" },
+  { value: "clothes", label: "Clothes" },
+];
 
 interface HeaderProps {
   showBackButton?: boolean;
@@ -18,7 +26,7 @@ export default function Header(props: HeaderProps) {
   const { showBackButton = false, title, hideRightIcons = false } = props;
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
+  const [searchCategory, setSearchCategory] = useState("all");
   return (
     <>
       <MobileSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
@@ -41,42 +49,45 @@ export default function Header(props: HeaderProps) {
             <input
               type="text"
               placeholder="Search"
-              className="flex-1 border border-blue-600 rounded-l px-3 py-1.5 text-sm outline-none"
+              className="flex-1 border border-[#0D6EFD] rounded-l px-3 py-1.5 text-sm outline-none"
             />
-            <select className="border border-l-0 border-blue-600 px-2 py-1.5 text-sm outline-none bg-gray-50">
-              <option>All category</option>
-              <option>Cameras</option>
-              <option>Laptops</option>
-              <option>Clothes</option>
-            </select>
-            <button className="bg-blue-600 text-white px-4 py-1.5 rounded-r text-sm hover:bg-blue-700">
+            <Select
+              options={CATEGORY_OPTIONS}
+              value={searchCategory}
+              onChange={(val) => setSearchCategory(val)}
+              className="w-35 h-9 border-t border-b border-[#0D6EFD] rounded-none [&>select]:border-none [&>select]:h-full [&>select]:rounded-none [&>select]:bg-gray-50"
+            />
+            <Button
+              variant="filled"
+              size="md"
+              className="rounded-l-none rounded-r-lg h-9"
+            >
               Search
-            </button>
+            </Button>
           </div>
 
-          {/* Icons Group wrapped with Next.js Link components */}
           <div className="flex items-center gap-5">
 
             {/* Profile Link */}
-            <Link href="/profile" className="flex flex-col items-center text-[#8B96A5] hover:text-blue-600 transition-colors group">
+            <Link href="/profile" className="flex flex-col items-center text-[#8B96A5] hover:text-[#0D6EFD] transition-colors group">
               <ProfileIcon className="text-inherit" />
               <span className="text-xs mt-1">Profile</span>
             </Link>
 
             {/* Message Link */}
-            <Link href="/messages" className="flex flex-col items-center text-[#8B96A5] hover:text-blue-600 transition-colors group">
+            <Link href="/messages" className="flex flex-col items-center text-[#8B96A5] hover:text-[#0D6EFD] transition-colors group">
               <ChatIcon className="text-inherit" />
               <span className="text-xs mt-1">Message</span>
             </Link>
 
             {/* Orders Link */}
-            <Link href="/orders" className="flex flex-col items-center text-[#8B96A5] hover:text-blue-600 transition-colors group">
+            <Link href="/orders" className="flex flex-col items-center text-[#8B96A5] hover:text-[#0D6EFD] transition-colors group">
               <HeartIcon className="text-inherit" />
               <span className="text-xs mt-1">Orders</span>
             </Link>
 
             {/* Cart Link */}
-            <Link href="/cart" className="flex flex-col items-center text-[#8B96A5] hover:text-blue-600 transition-colors group">
+            <Link href="/cart" className="flex flex-col items-center text-[#8B96A5] hover:text-[#0D6EFD] transition-colors group">
               <CartIcon className="text-inherit" />
               <span className="text-xs mt-1">My cart</span>
             </Link>
@@ -90,21 +101,27 @@ export default function Header(props: HeaderProps) {
         {/* Left Section */}
         <div className="flex items-center gap-4">
           {showBackButton ? (
-            <button
+            <Button
+              variant="ghost"
+              shape="icon"
+              size="sm"
               onClick={() => router.back()}
-              className="p-1 -ml-1 hover:bg-gray-100 rounded-full transition-colors flex items-center justify-center"
               aria-label="Go back"
+              className="text-[#1C1C1C] hover:bg-gray-100"
             >
-              <ArrowIcon className="text-[#1C1C1C]" />
-            </button>
+              <ArrowIcon />
+            </Button>
           ) : (
-            <button
+            <Button
+              variant="ghost"
+              shape="icon"
+              size="sm"
               onClick={() => setSidebarOpen(true)}
-              className="p-1 -ml-1 hover:bg-gray-100 rounded-full transition-colors"
               aria-label="Open menu"
+              className="text-gray-700 hover:bg-gray-100"
             >
-              <Menu size={22} className="text-gray-700" />
-            </button>
+              <Menu size={22} />
+            </Button>
           )}
 
           {/* Title */}
@@ -128,10 +145,10 @@ export default function Header(props: HeaderProps) {
         {!hideRightIcons ? (
           <div className="flex items-center gap-3">
             <Link href="/cart" aria-label="View cart">
-              <CartIcon size={22} className="text-[#8B96A5] hover:text-blue-600 transition-colors" />
+              <CartIcon size={22} className="text-[#8B96A5] hover:text-[#0D6EFD] transition-colors" />
             </Link>
             <Link href="/profile" aria-label="View profile">
-              <ProfileIcon size={22} className="text-[#8B96A5] hover:text-blue-600 transition-colors" />
+              <ProfileIcon size={22} className="text-[#8B96A5] hover:text-[#0D6EFD] transition-colors" />
             </Link>
           </div>
         ) : (
@@ -141,7 +158,7 @@ export default function Header(props: HeaderProps) {
 
       {/* Mobile search */}
       <div className="flex lg:hidden px-4 py-2 bg-[#FFFFFF] border-b border-gray-100">
-        <div className="flex w-full border border-blue-600 rounded overflow-hidden">
+        <div className="flex w-full border border-[#0D6EFD] rounded overflow-hidden">
           <Search size={16} className="text-gray-400 m-auto ml-3" />
           <input
             type="text"
@@ -154,12 +171,14 @@ export default function Header(props: HeaderProps) {
       {/* Mobile category tabs */}
       <div className="flex lg:hidden gap-2 px-4 py-2 overflow-x-auto scrollbar-hide bg-[#FFFFFF] border-b border-gray-100">
         {["All category", "Gadgets", "Clothes", "Accessories", "Electronics"].map((cat) => (
-          <button
+          <Button
             key={cat}
-            className="whitespace-nowrap text-sm text-blue-600 border border-blue-200 rounded-full px-3 py-1 hover:bg-blue-50"
+            variant="outline"
+            size="sm"
+            className="whitespace-nowrap rounded-full border border-blue-200 text-[#0D6EFD] bg-white hover:bg-blue-50 h-auto py-1 px-3"
           >
             {cat}
-          </button>
+          </Button>
         ))}
       </div>
 
