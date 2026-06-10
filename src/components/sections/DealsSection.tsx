@@ -70,9 +70,9 @@ export default function DealsSection() {
             {dealProducts.slice(0, 5).map((product, i) => (
               <div
                 key={product.id}
-                className="min-w-36 lg:flex-1 flex flex-col items-center justify-center py-5 px-3 border border-[#E0E0E0]"
+                className="min-w-36 lg:flex-1 flex flex-col items-center justify-center py-5 px-3 border border-[#E0E0E0] cursor-pointer group transition-colors duration-200 hover:bg-[#F5F8FF] hover:border-[#0D6EFD]"
               >
-                <div className="relative w-20 h-20 mb-3">
+                <div className="relative w-20 h-20 mb-3 transition-transform duration-300 group-hover:scale-110">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -80,8 +80,8 @@ export default function DealsSection() {
                     className="object-contain"
                   />
                 </div>
-                <p className="text-xs text-gray-700 text-center">{product.name}</p>
-                <span className="mt-2 text-xs bg-red-100 text-red-500 px-3 py-1 rounded-full font-medium">
+                <p className="text-xs text-gray-700 text-center group-hover:text-[#0D6EFD] transition-colors duration-200">{product.name}</p>
+                <span className="mt-2 text-xs bg-red-100 text-red-500 px-3 py-1 rounded-full font-medium transition-all duration-200 group-hover:bg-red-500 group-hover:text-white">
                   {discounts[i]}%
                 </span>
               </div>
