@@ -11,7 +11,6 @@ function useCountdown(targetSeconds: number) {
     const interval = setInterval(() => {
       setTime((t) => (t > 0 ? t - 1 : 0));
     }, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -38,23 +37,19 @@ export default function DealsSection() {
   ];
 
   return (
-    <section className="lg:px-6 py-6">
+    <section className="py-4 lg:px-8">
       <div className="bg-[#FFFFFF] md:border border-gray-200 rounded-lg overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr]">
+        <div className="flex flex-col lg:flex-row">
 
-          {/* Left Side */}
-          <div className="p-5 flex flex-row md:flex-col md:items-start md:justify-start md:gap-0 items-center justify-between gap-3 border-b lg:border-b-0 lg:border-r border-gray-200">
-            <div className="">
-              <h2 className="font-semibold text-gray-800 text-sm">
-                Deals and offers
-              </h2>
-              <p className="text-xs text-gray-500">
-                Hygiene equipments
-              </p>
+          {/* Left Side - stacks on top on mobile */}
+          <div className="flex lg:flex-col flex-row items-start justify-between lg:justify-start gap-3 p-5 border border-[#E0E0E0] lg:w-65 lg:shrink-0">
+            <div>
+              <h2 className="font-semibold text-gray-800 text-sm">Deals and offers</h2>
+              <p className="text-xs text-gray-500">Electronics equipments</p>
             </div>
 
             {/* Timer */}
-            <div className="flex gap-2 md:mt-4">
+            <div className="flex gap-2">
               {timeBlocks.map((block) => (
                 <div key={block.label} className="text-center">
                   <div className="bg-gray-700 text-white text-xs font-semibold w-10 h-10 flex flex-col items-center justify-center rounded">
@@ -70,14 +65,13 @@ export default function DealsSection() {
             </div>
           </div>
 
-          {/* Right Side Products */}
-          <div className="flex overflow-x-auto scrollbar-hide">
+          {/* Right Side Products - single scrollable row always */}
+          <div className="flex overflow-x-auto scrollbar-hide flex-1">
             {dealProducts.slice(0, 5).map((product, i) => (
               <div
                 key={product.id}
-                className="min-w-40 flex flex-col items-center justify-center py-5 px-3 border-r border-b border-gray-200 last:border-r-0"
+                className="min-w-36 lg:flex-1 flex flex-col items-center justify-center py-5 px-3 border border-[#E0E0E0]"
               >
-                {/* Product Image */}
                 <div className="relative w-20 h-20 mb-3">
                   <Image
                     src={product.image}
@@ -86,13 +80,7 @@ export default function DealsSection() {
                     className="object-contain"
                   />
                 </div>
-
-                {/* Product Name */}
-                <p className="text-xs text-gray-700 text-center">
-                  {product.name}
-                </p>
-
-                {/* Discount */}
+                <p className="text-xs text-gray-700 text-center">{product.name}</p>
                 <span className="mt-2 text-xs bg-red-100 text-red-500 px-3 py-1 rounded-full font-medium">
                   {discounts[i]}%
                 </span>
