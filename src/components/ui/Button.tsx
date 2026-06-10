@@ -79,9 +79,16 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         {...props}
       >
-        {leadingIcon}
-        {shape === "default" && children}
-        {trailingIcon}
+ 
+        {shape === "icon" ? (
+          children
+        ) : (
+          <>
+            {leadingIcon}
+            {children}
+            {trailingIcon}
+          </>
+        )}
       </button>
     );
   }
