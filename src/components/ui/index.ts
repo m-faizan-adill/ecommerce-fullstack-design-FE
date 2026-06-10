@@ -4,3 +4,5 @@ export { default as Button } from "./Button";
 export { Checkbox, Radio } from "./FormChecks";
 export { default as Rating } from "./Rating";
 export * from "./FormSelect";
+export { default as Container } from "./Container";
+export { default as Pagination } from "./Pagination";
