@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { Button } from "../ui";
+import Link from "next/link";
+import { ArrowIcon } from "@/assets";
 
 interface CategoryItem {
   name: string;
@@ -10,128 +13,78 @@ interface CategorySectionProps {
   title: string;
   bannerImage: string;
   items: CategoryItem[];
-  cols?: number;
 }
 
 export default function CategorySection({
   bannerImage,
   items,
-  cols = 4,
   title = "Home and outdoor",
 }: CategorySectionProps) {
-  const row1 = items.slice(0, cols);
-  const row2 = items.slice(cols, cols * 2);
+
 
   return (
-    <section className="lg:px-6 pb-6">
-      <div className="bg-[#FFFFFF] md:border border-gray-200 rounded">
+    <section className="py-4 lg:px-8">
 
-        <div className="hidden md:grid rounded overflow-hidden"
-          style={{
-            gridTemplateColumns: `250px repeat(${cols}, 1fr)`,
-            gridTemplateRows: "auto auto",
-          }}
-        >
-          {/* Banner — spans both rows */}
-          <div className="row-span-2 relative min-h-44">
-            <Image src={bannerImage} alt={title} fill className="object-cover" />
-            <div className="absolute inset-0 bg-black/30 flex flex-col justify-start p-4">
-              <h2 className="font-bold text-white text-lg leading-snug">{title}</h2>
-              <a
-                href="#"
-                className="mt-2 inline-block bg-[#FFFFFF] text-gray-800 text-xs px-3 py-1 rounded hover:bg-gray-100 w-fit"
-              >
-                Source now
-              </a>
-            </div>
+      <div className="flex border border-[#DEE2E7] rounded overflow-hidden">
+
+        {/* Left promo card - hidden on mobile */}
+        <div className="hidden lg:flex flex-col justify-between w-65 h-67 shrink-0 bg-[#EEF1FD] p-4 relative">
+          {/* Background image - full cover */}
+          <Image
+            src={bannerImage || "/assets/Image/backgrounds/image 98.png"}
+            alt="Electronics"
+            fill
+            className="object-cover object-center"
+          />
+
+          <div className="z-10 space-y-2">
+            <h2 className="text-[20px] font-bold text-[#1C1C1C] leading-tight">{title}</h2>
+
+            <Button
+              variant="outline"
+              size="sm"
+              className="bg-white border-[#FFFFFF] text-[#1C1C1C] hover:bg-gray-50"
+            >
+              Source now
+            </Button>
           </div>
-
-          {/* Row 1 items */}
-          {row1.map((item, i) => (
-            <a
-              key={`r1-${i}`}
-              href="#"
-              className="flex flex-col justify-between border border-gray-200 p-3 hover:bg-gray-50 transition-colors"
-            >
-              <div>
-                <p className="text-xs font-medium text-gray-800 line-clamp-2 leading-tight">
-                  {item.name}
-                </p>
-                <p className="text-xs text-gray-400 mt-0.5">From</p>
-                <p className="text-xs text-gray-500">USD {item.price}</p>
-              </div>
-              <div className="relative w-full h-16 mt-2">
-                <Image src={item.image} alt={item.name} fill className="object-contain" />
-              </div>
-            </a>
-          ))}
-
-          {/* Row 2 items */}
-          {row2.map((item, i) => (
-            <a
-              key={`r2-${i}`}
-              href="#"
-              className="flex flex-col justify-between border border-gray-200 p-3 bg-[#FFFFFF] hover:bg-gray-50 transition-colors"
-              style={{ gridColumnStart: i + 2 }}
-            >
-              <div>
-                <p className="text-xs font-medium text-gray-800 line-clamp-2 leading-tight">
-                  {item.name}
-                </p>
-                <p className="text-xs text-gray-400 mt-0.5">From</p>
-                <p className="text-xs text-gray-500">USD {item.price}</p>
-              </div>
-              <div className="relative w-full h-16 mt-2">
-                <Image src={item.image} alt={item.name} fill className="object-contain" />
-              </div>
-            </a>
-          ))}
         </div>
 
-        {/* ── MOBILE (below md) ── */}
-        <div className="md:hidden py-3 border-b border-gray-200">
-          <h2 className="font-bold text-gray-900 text-base mb-3 pl-5 md:pl-0">{title}</h2>
-
-          {/* Horizontal scroll row */}
-          <div className="flex overflow-x-auto scrollbar-hide divide-x divide-gray-200 border border-gray-200 md:rounded">
+        <div className="flex flex-col bg-[#FFFFFF] flex-1">
+          <div className="flex overflow-x-auto lg:grid lg:grid-cols-4 lg:overflow-visible scrollbar-hide flex-1 w-full">
             {items.map((item, i) => (
-              <a
+              <div
                 key={i}
-                href="#"
-                className="shrink-0 w-36 p-3 flex flex-col items-start md:bg-[#FFFFFF] hover:bg-gray-50 transition-colors"
+                className="flex flex-col items-center p-4 border border-[#E0E0E0] min-w-36 lg:min-w-0 lg:flex-row lg:items-start lg:justify-between"
               >
-                <div className="relative w-full h-24 mb-2">
-                  <Image src={item.image} alt={item.name} fill className="object-contain mix-blend-multiply" />
+                {/* Image - top on mobile, right on desktop */}
+                <div className="relative h-20 w-20 lg:h-14 lg:w-14 shrink-0 lg:self-end lg:order-2">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-contain mix-blend-multiply"
+                  />
                 </div>
-                <p className="text-xs font-medium text-gray-800 line-clamp-2 leading-tight w-full">
-                  {item.name}
-                </p>
-                <p className="text-xs text-gray-400 mt-0.5">From USD {item.price}</p>
-              </a>
+
+                {/* Text - bottom on mobile, left on desktop */}
+                <div className="mt-2 text-center lg:text-left lg:mt-0 lg:order-1">
+                  <p className="font-normal lg:text-base text-sm leading-[100%] tracking-normal text-[#1C1C1C]">{item.name}</p>
+                  <div className="text-[#8B96A5] lg:text-sm text-xs flex md:flex-col md:space-x-0 flex-row space-x-1 mt-2 font-normal  leading-[100%] tracking-normal">
+                    <p>From</p>
+                    <p>USD {item.price}</p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
-
-          {/* Source now link */}
-          <a
-            href="#"
-            className="inline-flex items-center gap-1 mt-3 pl-5 md:pl-0 text-sm text-blue-600 font-medium hover:underline"
-          >
-            Source now
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-4 h-4"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
+          <div className="flex flex-row items-center justify-start gap-1 py-3 pl-5 lg:hidden text-[#0D6EFD] font-medium hover:underline">
+            <Link href={'/'} className="text-sm">
+              Source now
+            </Link>
+            <ArrowIcon direction="right" className="size-3" />
+          </div>
         </div>
-
       </div>
     </section>
   );
