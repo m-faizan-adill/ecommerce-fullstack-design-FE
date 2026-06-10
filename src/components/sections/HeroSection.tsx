@@ -14,14 +14,10 @@ export default function HeroSection() {
         <aside className="hidden lg:block w-50 shrink-0">
           <ul>
             {categories.map((cat, i) => (
-              <li key={cat}>
-                <a
-                  href="#"
-                  className={`block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-sm ${i === 0 ? "bg-blue-50 text-gray-900" : ""
-                    }`}
-                >
-                  {cat}
-                </a>
+              <li key={cat.slug}>
+                <Link href={`/categories/${cat.slug}`} className={`block px-4 py-2 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-sm ${i === 0 ? "bg-blue-50 text-gray-900" : ""}`}>
+                  {cat.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -59,7 +55,7 @@ export default function HeroSection() {
         {/* Right cards - desktop only */}
         <div className="hidden lg:flex flex-col gap-2 w-44 shrink-0">
           <div className="bg-blue-100 rounded p-3 flex flex-col gap-2">
-      
+
             <div className="flex items-center gap-2">
               <div className="h-11 w-11 rounded-full bg-[#E3F0FF]" />
               <div>
