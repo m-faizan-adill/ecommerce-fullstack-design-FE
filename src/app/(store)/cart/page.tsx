@@ -12,7 +12,7 @@ import { Button } from "@/components/ui";
 
 export default async function CartPage() {
   const carts = await getCarts();
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   return (
     <div className="bg-[#F7FAFC] min-h-screen flex flex-col font-sans">
