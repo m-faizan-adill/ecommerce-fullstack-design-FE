@@ -55,7 +55,7 @@ export default function Header(props: HeaderProps) {
               options={CATEGORY_OPTIONS}
               value={searchCategory}
               onChange={(val) => setSearchCategory(val)}
-              className="w-35 h-9 border-t border-b border-[#0D6EFD] rounded-none [&>select]:border-none [&>select]:h-full [&>select]:rounded-none [&>select]:bg-gray-50"
+              className="w-36 h-9 border-t border-b border-[#0D6EFD] rounded-none [&>select]:border-none [&>select]:h-full [&>select]:rounded-none [&>select]:bg-gray-50"
             />
             <Button
               variant="filled"
