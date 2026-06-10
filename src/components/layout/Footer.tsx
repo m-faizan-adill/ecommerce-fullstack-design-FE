@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#EFF2F4] border-t border-gray-200 mt-10">
       {/* Newsletter */}
-      <div className="text-center py-8 border-b border-gray-100">
+      <div className="text-center py-8 border-b px-6 border-gray-100">
         <h3 className="font-medium text-gray-800 mb-1">Subscribe on our newsletter</h3>
         <p className="text-sm text-gray-500 mb-4">Get daily news on upcoming offers from many suppliers all over the world</p>
         <div className="flex justify-center gap-2 max-w-sm mx-auto">
