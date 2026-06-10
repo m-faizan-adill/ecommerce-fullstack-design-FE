@@ -49,7 +49,7 @@ export default function HeroSection() {
             <Button
               variant="outline"
               size="md"
-              className="bg-white border border-white shadow-[0px_1px_2px_0px_#38383814] text-black w-29.75 h-10 rounded-md px-4 gap-2.5 opacity-100"
+              className="bg-[#FFFFFF] border border-[#FFFFFF] shadow-[0px_1px_2px_0px_#38383814] text-[#1C1C1C] w-29.75 h-10 rounded-md px-4 gap-2.5 opacity-100"
             >
               Learn more
             </Button>
@@ -61,7 +61,7 @@ export default function HeroSection() {
           <div className="bg-blue-100 rounded p-3 flex flex-col gap-2">
       
             <div className="flex items-center gap-2">
-              <div className="h-11 w-11 rounded-full bg-gray-200" />
+              <div className="h-11 w-11 rounded-full bg-[#E3F0FF]" />
               <div>
                 <p>Hi, user</p>
                 <p>let's get started</p>
