@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className="lg:px-6 lg:pt-6">
+    <div className="py-4 lg:px-8">
       <div className="flex items-stretch gap-3 bg-[#FFFFFF] lg:border lg:border-gray-200 lg:rounded lg:p-4">
 
         {/* Category sidebar - desktop only */}
@@ -24,7 +24,7 @@ export default function HeroSection() {
         </aside>
 
         {/* Hero banner */}
-        <div className="flex-1 relative lg:rounded overflow-hidden w-166 h-93.25 min-h-50 lg:min-h-60">
+        <div className="flex-1 relative lg:rounded overflow-hidden lg:w-166 w-full h-93.25 min-h-50 lg:min-h-60">
           <Image
             src="/assets/Image/backgrounds/Banner-board-800x420 2.png"
             alt="Electronic items"

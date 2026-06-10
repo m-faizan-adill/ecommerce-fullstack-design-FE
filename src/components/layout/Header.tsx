@@ -7,7 +7,7 @@ import { SecondaryHeader } from "./SecondaryHeader";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowIcon, CartIcon, ChatIcon, ProfileIcon, HeartIcon } from "../../assets";
-import { Button, Select } from "../ui";
+import { Button, Container, Select } from "../ui";
 
 const CATEGORY_OPTIONS = [
   { value: "all", label: "All category" },
@@ -33,7 +33,7 @@ export default function Header(props: HeaderProps) {
 
       {/* Top bar */}
       <div className="w-full border-b border-gray-200 bg-[#FFFFFF]">
-        <div className="max-w-7xl mx-auto hidden lg:flex items-center justify-between py-2 px-4 sm:px-6 lg:px-8">
+        <Container className="hidden lg:flex items-center justify-between py-2 ">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center shadow-sm">
@@ -93,7 +93,7 @@ export default function Header(props: HeaderProps) {
             </Link>
 
           </div>
-        </div>
+        </Container>
       </div>
 
       {/* Mobile top bar */}

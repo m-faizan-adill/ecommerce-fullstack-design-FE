@@ -3,7 +3,7 @@ import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-import { Breadcrumbs, Rating } from "@/components/ui";
+import { Breadcrumbs, Container, Rating } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import SupplierCard from "@/features/products/components/SupplierCard";
 import { Tabs } from "@/components/ui/Tabs";
@@ -57,10 +57,9 @@ export default async function ProductPage(props: ProductPageProps) {
   return (
     <>
       <Header />
-
+      
       {/* Main Container: Mobile par transparent padding distributions */}
-      <main className="max-w-7xl mx-auto min-h-screen lg:py-4 px-0 sm:px-6 lg:px-8 bg-gray-50 lg:bg-transparent">
-
+      <Container className="min-h-screen lg:py-4 px-0 lg:bg-transparent">
         {/* Breadcrumbs: Hidden on mobile layouts */}
         <div className="hidden lg:block mb-4">
           <Breadcrumbs />
@@ -81,7 +80,7 @@ export default async function ProductPage(props: ProductPageProps) {
                 className="object-contain max-h-75 lg:max-h-full"
                 priority
               />
-              
+
               {/* Mobile Only: Slider Dots / Arrow Indicators Overlay */}
               <div className="absolute bottom-4 right-4 flex lg:hidden bg-black/30 backdrop-blur-xs rounded-full px-2 py-1 items-center gap-2">
                 <button className="text-white text-xs font-semibold opacity-80 px-1">&larr;</button>
@@ -171,7 +170,7 @@ export default async function ProductPage(props: ProductPageProps) {
               <div className="grid grid-cols-3 text-gray-500 lg:hidden"><span className="text-[#8B96A5]">Price:</span> <span className="col-span-2 text-[#505050] font-medium">Negotiable</span></div>
               {Object.entries(product.specs).map(([key, val]) => (
                 <div key={key} className="grid grid-cols-3 text-gray-500">
-                  <span className="text-[#8B96A5]">{key}</span> 
+                  <span className="text-[#8B96A5]">{key}</span>
                   <span className="col-span-2 text-[#505050]">{val}</span>
                 </div>
               ))}
@@ -201,7 +200,7 @@ export default async function ProductPage(props: ProductPageProps) {
               contents={[
                 <div key="desc" className="flex flex-col text-sm">
                   <p className="text-[#505050] leading-relaxed mb-6">{product.description}</p>
-                  
+
                   {/* Detailed Spec Block Table */}
                   <div className="border border-[#E0E2E6] overflow-hidden bg-[#FFFFFF] shadow-xs mb-6">
                     {Object.entries(product.specs).map(([key, val]) => (
@@ -264,7 +263,7 @@ export default async function ProductPage(props: ProductPageProps) {
                 <div className="w-full aspect-square rounded-md bg-[#F7F7F7] border border-gray-100 flex items-center justify-center p-3">
                   <div className="w-full h-full relative">
                     <Image
-                      src="/images/polo-main.png" 
+                      src="/images/polo-main.png"
                       alt={prod.name}
                       fill
                       className="object-contain mix-blend-multiply"
@@ -284,7 +283,7 @@ export default async function ProductPage(props: ProductPageProps) {
         </div>
 
         <PromoBanner />
-      </main>
+      </Container>
 
       <Footer />
     </>

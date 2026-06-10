@@ -1,6 +1,6 @@
 export default function InquiryBanner() {
   return (
-    <section className="px-4 lg:px-6 py-4">
+    <section className="py-4">
       <div
         className="relative rounded overflow-hidden bg-[url('/assets/Image/backgrounds/Group_982.png')] bg-cover bg-center bg-no-repeat"
       >

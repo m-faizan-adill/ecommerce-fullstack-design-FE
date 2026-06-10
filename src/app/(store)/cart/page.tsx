@@ -8,7 +8,7 @@ import PromoBanner from "@/features/carts/components/PromoBanner";
 import { getCarts } from "@/features/carts/services/cart.service";
 import { ProfileIcon } from "@/assets";
 import Link from "next/link";
-import { Button } from "@/components/ui";
+import { Button, Container } from "@/components/ui";
 
 export default async function CartPage() {
   const carts = await getCarts();
@@ -18,8 +18,7 @@ export default async function CartPage() {
     <div className="bg-[#F7FAFC] min-h-screen flex flex-col font-sans">
       <Header showBackButton={true} title="Shopping cart" hideRightIcons={true} />
 
-
-      <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1">
+      <Container className="py-6 flex-1">
         {!isLoggedIn ? (
           <div className="flex flex-col items-center justify-center py-12 bg-white rounded-xl border border-gray-200 shadow-sm max-w-md mx-auto my-8 p-8">
             <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-4">
@@ -55,11 +54,8 @@ export default async function CartPage() {
             <PromoBanner />
           </>
 
-        )
-        }
-
-      </main >
-
+        )}
+      </Container>
       <Footer />
     </div >
   );

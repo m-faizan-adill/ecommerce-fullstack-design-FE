@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { ShoppingBag } from "lucide-react";
 import { ChevronIcon } from "@/assets";
-import { Button } from "../ui";
+import { Button, Container } from "../ui";
 import { EmailIcon } from "@/assets";
 
 
@@ -26,7 +26,7 @@ export default function Footer() {
 
       {/* Links */}
       <div className="bg-[#FFFFFF] w-full">
-        <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-5 gap-6">
+        <Container className="py-8 grid grid-cols-2 md:grid-cols-5 gap-6">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center mb-3">
               <Link href="#" className="flex items-center gap-2">
@@ -66,7 +66,7 @@ export default function Footer() {
               </ul>
             </div>
           ))}
-        </div>
+        </Container>
       </div>
 
       {/* Get app */}

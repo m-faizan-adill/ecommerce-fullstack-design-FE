@@ -2,13 +2,13 @@ import { AllCategoryButton } from "./AllCategoryButton";
 import { NavLinks } from "./NavLinks";
 import { LocaleSelector } from "./LocaleSelector";
 import { ShipToSelector } from "./ShipToSelector";
+import { Container } from "../ui";
 
 
 export function SecondaryHeader() {
   return (
     <div className="w-full border-b border-gray-200 bg-[#FFFFFF]">
-      <div className="max-w-7xl mx-auto flex h-11 items-center justify-between px-4 sm:px-6 lg:px-8">
-
+      <Container className="flex h-11 items-center justify-between">
         {/* ── Left: All-category trigger + nav links ── */}
         <div className="flex items-center gap-1">
           <AllCategoryButton />
@@ -31,8 +31,7 @@ export function SecondaryHeader() {
 
           <ShipToSelector />
         </div>
-
-      </div>
+      </Container>
     </div>
   );
 }

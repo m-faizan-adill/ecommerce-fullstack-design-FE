@@ -3,8 +3,10 @@ import { recommendedProducts } from "@/lib/data";
 
 export default function RecommendedSection() {
   return (
-    <section className="px-4 lg:px-6 py-4">
-      <h2 className="font-semibold text-gray-800 mb-4">Recommended items</h2>
+    <section className="py-4">
+      <h2 className="font-semibold text-lg lg:text-2xl text-[#1C1C1C] mb-5 tracking-tight">
+        Recommended items
+      </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
         {recommendedProducts.map((product) => (
           <a
