@@ -1,15 +1,16 @@
 import { CartItem, Product } from "@/types";
 
 export const categories = [
-  "Automobiles",
-  "Clothes and wear",
-  "Home interiors",
-  "Computer and tech",
-  "Tools, equipments",
-  "Sports and outdoor",
-  "Animal and pets",
-  "Machinery tools",
-  "More category",
+  { name: "Electronics", slug: "electronics" },
+  { name: "Automobiles", slug: "automobiles" },
+  { name: "Clothes and Wear", slug: "clothes-and-wear" },
+  { name: "Home Interiors", slug: "home-interiors" },
+  { name: "Computer and Tech", slug: "computer-and-tech" },
+  { name: "Tools, Equipments", slug: "tools-equipments" },
+  { name: "Sports and Outdoor", slug: "sports-and-outdoor" },
+  { name: "Animal and Pets", slug: "animal-and-pets" },
+  { name: "Machinery Tools", slug: "machinery-tools" },
+  { name: "More Category", slug: "more-category" },
 ];
 
 export const navLinks = [
